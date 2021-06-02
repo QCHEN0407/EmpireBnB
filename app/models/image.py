@@ -16,8 +16,8 @@ class Image(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "name": self.name,
-            "channel_type": self.channel_type,
-            "messages": {message.id: message.to_dict() for message in self.messages},
-            "users": {user.id: { "name": f"{user.firstname} {user.lastname}", "avatar": user.avatar, "id": user.id } for user in self.users}
+            "url": self.url,
+            "listing_id": self.listing_id,
+            "created_at": self.created_at,
+            "updated_at": self.updated_at
         }
