@@ -18,7 +18,9 @@ class Booking(db.Model):
                            default=datetime.datetime.now())
     updated_at = db.Column(db.DateTime, nullable=False,
                            default=datetime.datetime.now())
-    
+    user = db.relationship("User", back_populates="bookings")
+    listing = db.relationship("Listing", back_populates="bookings")
+
 
     def to_dict(self):
         return {
