@@ -9,7 +9,7 @@ class Booking(db.Model):
     listing_id = db.Column(db.Integer, db.ForeignKey('listings.id'), nullable=False)
 
     check_in = db.Column(db.DateTime, nullable=False,
-                           default=datetime.date().today)
+                           default=datetime.date.today())
     check_out = db.Column(db.DateTime, nullable=False,
                            default=datetime.date.today() + datetime.timedelta(days=1))
     num_guests = db.Column(db.Integer, nullable=False)

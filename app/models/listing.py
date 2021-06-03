@@ -10,9 +10,9 @@ class Listing(db.Model):
     type = db.Column(db.String(20), nullable=False)
     host_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     price = db.Column(db.Float, nullable=False)
-    num_guests = db.Column(db.Interger, nullable=False)
-    num_beds = db.Column(db.Interger, nullable=False)
-    num_baths = db.Column(db.Interger, nullable=False)
+    num_guests = db.Column(db.Integer, nullable=False)
+    num_beds = db.Column(db.Integer, nullable=False)
+    num_baths = db.Column(db.Integer, nullable=False)
     city = db.Column(db.String(30), nullable=False)
     state = db.Column(db.String(30), nullable=False)
     latitude = db.Column(db.Float, nullable=False)
@@ -22,8 +22,11 @@ class Listing(db.Model):
                            default=datetime.datetime.now())
     updated_at = db.Column(db.DateTime, nullable=False,
                            default=datetime.datetime.now())
-    host = db.relationship("User", back_populates="listings")
+
+    user = db.relationship("User", back_populates="listings")
     images = db.relationship("Image", back_populates="listing")
+    bookings = db.relationship("Booking", back_populates="listing")
+    reviews = db.relationship("Review", back_populates="listing")
 
 
     def to_dict(self):
