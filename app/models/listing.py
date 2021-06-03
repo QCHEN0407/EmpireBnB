@@ -23,6 +23,7 @@ class Listing(db.Model):
     updated_at = db.Column(db.DateTime, nullable=False,
                            default=datetime.datetime.now())
     host = db.relationship("User", back_populates="listings")
+    images = db.relationship("Image", back_populates="listing")
 
 
     def to_dict(self):
