@@ -8,44 +8,61 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./store/session";
+import { LoginSignupModalProvider } from "./context/LoginSignupModalContext";
 
 function App() {
   const user = useSelector(state => state.session.user)
-  const [loaded, setLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
-      setLoaded(true);
+      setIsLoaded(true);
     })();
   }, []);
 
-  if (!loaded) {
+  if (!isLoaded) {
     return null;
   }
 
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route path="/login" exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path="/users" exact={true} >
-          <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true} >
-          <User />
-        </ProtectedRoute>
-        <ProtectedRoute path="/" exact={true} >
-          <h1>My Home Page</h1>
-        </ProtectedRoute>
-      </Switch>
-    </BrowserRouter>
+    <>
+      <LoginSignupModalProvider>
+        {isLoaded && (
+          <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <NavBar isLoaded={isLoaded} />
+            </Route>
+
+            <Route path="/listings/:id(\d+)">
+            </Route>
+
+            <Route path="/bookings">
+            </Route>
+
+            <Route exact path="/search">
+            </Route>
+
+            <Route path="/search/:category">
+            </Route>
+
+            <Route path="/users/:id(\d+)">
+            </Route>
+
+            <Route path="/login">
+              <LoginForm />
+            </Route>
+
+            <Route path="/signup">
+              <SignUpForm />
+            </Route>
+          </Switch>
+          </BrowserRouter>
+        )}
+      </LoginSignupModalProvider>
+    </>
   );
 }
 

@@ -6,18 +6,26 @@ import { GoSearch as SearchIcon } from "react-icons/go";
 import { MdLanguage as LanguageIcon } from "react-icons/md";
 import { FiMenu as MenuIcon } from "react-icons/fi";
 import { FaUserCircle as AvatarIcon } from "react-icons/fa";
-import Logo from '../../images/homepage/airbnb-logo.png';
-import LogoBNW from '../../images/homepage/airbnb-logo-bnw.png';
+import Logo from '../../../images/homepage/airbnb-logo.png';
+import LogoBNW from '../../../images/homepage/airbnb-logo-bnw.png';
 import DropdownMenu from "./DropdownMenu";
-import useConsumeContext from "../../context/LoginSignupModalContext";
-import "./Navbar.css";
+import useConsumeContext from "../../../context/LoginSignupModalContext";
+import "./NavBar.css";
 
 const NavBar = ({ isLoaded }) => {
+  const [dark, setDark] = useState('dark');
   const [black, setBlack] = useState('black');
   const [logo, setLogo] = useState(LogoBNW);
-  const { showMenu, setShowMenu, setShowLogin, setShowSigUp } = useConsumeContext();
+  const { showMenu, setShowMenu, setShowLogin, setShowSignUp } = useConsumeContext();
   const history = useHistory();
+  const sessionUser = useSelector(state => state.session.user);
 
+  const openMenu = () => {
+    // if (showMenu) return;
+    setShowMenu((prevState) => !prevState);
+    setShowLogin(false); // closes when dropdown closes
+    setShowSignUp(false); // closes when dropdown closes
+};
 
   //trigger the navbar style change
   useEffect(() => {
