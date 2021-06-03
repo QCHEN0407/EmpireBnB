@@ -32,5 +32,7 @@ class Booking(db.Model):
             "num_guests": self.num_guests,
             "total_cost": self.total_cost,
             "created_at": self.created_at,
-            "updated_at": self.updated_at
+            "updated_at": self.updated_at,
+            "user": self.user,
+            "listing": self.listing
         }
