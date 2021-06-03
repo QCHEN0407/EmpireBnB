@@ -1,6 +1,7 @@
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from .booking import Booking
 
 class User(db.Model, UserMixin):
   __tablename__ = 'users'
@@ -14,6 +15,11 @@ class User(db.Model, UserMixin):
   bookings = db.relationship("Booking", back_populates="user")
   reviews = db.relationship("Review", back_populates="user")
 
+  # bookedListings = db.relationship(
+  #   "Listing",
+  #   secondary = bookings,
+  #   back_populates="users"
+  #   )
 
   @property
   def password(self):
