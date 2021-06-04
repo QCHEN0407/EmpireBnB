@@ -44,7 +44,7 @@ class Listing(db.Model):
             "state": self.state,
             "latitude": self.latitude,
             "longitude": self.longitude,
-            "rating": self.rating,
+            "rating": str(self.rating),
             "created_at": self.created_at,
             "updated_at": self.updated_at
     }
