@@ -1,7 +1,8 @@
 import React from "react"
 import { NavLink, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-
+import LoginFormModal from '../../auth/LoginFormModal';
+import SignUpFormModal from "../../auth/SignUpFormModal";
 import useConsumeContext from "../../../context/LoginSignupModalContext";
 
 const DropdownMenu = ({ dark, isLoaded }) => {
@@ -34,10 +35,10 @@ const DropdownMenu = ({ dark, isLoaded }) => {
         sessionLinks = (
             <>
                 <li className={`modal__buttons ${dark}`}>
-                    {/* <LoginModal /> */}
+                    <LoginFormModal />
                 </li>
                 <li className={`modal__buttons ${dark}`}>
-                    {/* <SignupModal /> */}
+                    <SignUpFormModal />
                 </li>
             </>
         );

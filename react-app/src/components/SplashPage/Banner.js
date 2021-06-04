@@ -10,7 +10,7 @@ function Banner() {
                 <img src={BannerImage} alt="Cabin in the woods" />
             </div>
             <div id="explore_nearby" className="banner__message">
-                <p>Made possible by Hosts</p>
+                <p></p>
             </div>
         </div>
     )
