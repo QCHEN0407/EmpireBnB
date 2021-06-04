@@ -13,7 +13,9 @@ export const LoginSignupModalProvider = (props) => {
     };
 
     const handleLoginModal = () => {
+        console.log("########" + showLogin)
         setShowLogin(!showLogin);
+        console.log("########" + showLogin)
         setShowSignUp(false);
     };
 

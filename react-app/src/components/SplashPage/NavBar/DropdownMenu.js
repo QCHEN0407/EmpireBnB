@@ -8,7 +8,7 @@ import useConsumeContext from "../../../context/LoginSignupModalContext";
 const DropdownMenu = ({ dark, isLoaded }) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const { setShowMenu } = useConsumeContext();
+    const { showMenu, setShowMenu, setShowLogin, setShowSignUp } = useConsumeContext();
     const history = useHistory();
 
     const logout = (e) => {
@@ -51,14 +51,6 @@ const DropdownMenu = ({ dark, isLoaded }) => {
                     {sessionUser ? <p>{`Welcome, ${sessionUser.firstName}!`}</p> : <p>{`Welcome!`}</p>}
                 </li>
                 {isLoaded && sessionLinks}
-                <li className="dropdown__divider">
-                </li>
-                <li>
-                    <a href="https://github.com/QCHEN0407/EmpireBnB">GitHub</a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/qingweichen/">LinkedIn</a>
-                </li>
             </ul>
         </div>
     );

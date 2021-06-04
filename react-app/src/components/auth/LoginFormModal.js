@@ -9,6 +9,7 @@ const LoginFormModal = () => {
 
     return (
         <>
+            <button onClick={handleLoginModal}>Log In</button>
             {showLogin && (
             <Modal onClose={() => handleLoginModal()}>
                 <LoginForm />
