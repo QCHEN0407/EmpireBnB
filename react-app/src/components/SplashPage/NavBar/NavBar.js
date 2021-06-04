@@ -13,36 +13,34 @@ import useConsumeContext from "../../../context/LoginSignupModalContext";
 import "./NavBar.css";
 
 const NavBar = ({ isLoaded }) => {
-  const [dark, setDark] = useState('dark');
-  const [logo, setLogo] = useState(LogoBNW);
-  const { showMenu, setShowMenu, setShowLogin, setShowSignUp } = useConsumeContext();
-  const history = useHistory();
-  const sessionUser = useSelector(state => state.session.user);
+const [dark, setDark] = useState('dark');
+const [logo, setLogo] = useState(LogoBNW);
+const { showMenu, setShowMenu, setShowLogin, setShowSignUp } = useConsumeContext();
+const history = useHistory();
+const sessionUser = useSelector(state => state.session.user);
 
-  const openMenu = () => {
-    // if (showMenu) return;
-    setShowMenu((prevState) => !prevState);
-    setShowLogin(false); // closes when dropdown closes
-    setShowSignUp(false); // closes when dropdown closes
+const openMenu = () => {
+  setShowMenu((prevState) => !prevState);
+  setShowLogin(false); 
+  setShowSignUp(false); 
 };
 
-  //trigger the navbar style change
-  useEffect(() => {
-    const scrollFunction = function () {
-      if (window.pageYOffset > 0) {
-        setLogo(Logo);
-        setDark("");
-      } else if (window.pageYOffset === 0) {
-        setLogo(LogoBNW);
-        setDark("dark");
-      }
-    };
-    window.addEventListener('scroll', scrollFunction);
-    return () => window.removeEventListener('scroll', scrollFunction);
-  }, []);
+useEffect(() => {
+  const scrollFunction = function () {
+    if (window.pageYOffset > 0) {
+      setLogo(Logo);
+      setDark("");
+    } else if (window.pageYOffset === 0) {
+      setLogo(LogoBNW);
+      setDark("dark");
+    }
+  };
+  window.addEventListener('scroll', scrollFunction);
+  return () => window.removeEventListener('scroll', scrollFunction);
+}, []);
 
-  const handleClick = () => {
-    history.push("/search");
+const handleClick = () => {
+  history.push("/search");
 }
 
 return (
