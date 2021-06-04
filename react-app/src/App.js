@@ -7,6 +7,7 @@ import NavBar from "./components/SplashPage/NavBar/NavBar";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
+import Footer from "./components/Footer/Footer";
 import { authenticate } from "./store/session";
 import { LoginSignupModalProvider } from "./context/LoginSignupModalContext";
 import SplashPage from "./components/SplashPage/Splash";
@@ -36,6 +37,7 @@ function App() {
             <Route exact path="/">
               <NavBar isLoaded={isLoaded} />
               <SplashPage />
+              <Footer />
             </Route>
 
             <Route path="/listings/:id(\d+)">
