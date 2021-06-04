@@ -14,7 +14,6 @@ import "./NavBar.css";
 
 const NavBar = ({ isLoaded }) => {
   const [dark, setDark] = useState('dark');
-  const [black, setBlack] = useState('black');
   const [logo, setLogo] = useState(LogoBNW);
   const { showMenu, setShowMenu, setShowLogin, setShowSignUp } = useConsumeContext();
   const history = useHistory();
@@ -35,13 +34,16 @@ const NavBar = ({ isLoaded }) => {
         setDark("");
       } else if (window.pageYOffset === 0) {
         setLogo(LogoBNW);
-        setDark("black");
+        setDark("dark");
       }
     };
     window.addEventListener('scroll', scrollFunction);
     return () => window.removeEventListener('scroll', scrollFunction);
   }, []);
 
+  const handleClick = () => {
+    history.push("/search");
+}
 
 return (
   <nav className={`navbar__container ${dark}`}>
@@ -51,11 +53,18 @@ return (
         src={logo}
         alt="AirBnB Logo" />
     </NavLink>
-    {dark === "dark" && <div className={`navbar__info ${dark}`}>
+    {/* {dark === "dark" && <div className={`navbar__info ${dark}`}>
       <span><a href="#explore_nearby">Explore Nearby</a></span>
       <span><a href="#live_anywhere">Live Anywhere</a></span>
       <span><a href="#featured_homes">Featured Homes</a></span>
-    </div>}
+    </div>} */}
+    <div className={`navbar__search ${dark}`} onClick={handleClick}>
+                <div className="navbar__search-title">
+                    Start your search
+                </div>
+                <SearchIcon onClick={handleClick} className="search-icon" />
+                
+    </div>
     <div className={`navbar__buttons ${dark}`}>
       <div className={`become-a-host ${dark}`}><p>Become a host</p></div>
       <LanguageIcon className={`language-icon ${dark}`} />
