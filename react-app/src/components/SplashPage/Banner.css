@@ -1,0 +1,30 @@
+
+.banner__container {
+    max-height: 200vh;
+    background-color: black;
+    position: relative;
+}
+
+.banner__image {
+    display: flex;
+    justify-content: center;
+}
+
+.banner__image img {
+    padding-top: 40px;
+    object-fit: cover;
+    vertical-align: bottom;
+    height: 90%;
+    width: 90%;
+}
+
+.banner__message {
+    display: flex;
+    justify-content: center;
+    padding: 25px 0px;
+}
+
+.banner__message > p {
+    color: white;
+    font-size: 30px;
+}

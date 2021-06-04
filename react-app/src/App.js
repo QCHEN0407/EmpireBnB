@@ -9,6 +9,7 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import { authenticate } from "./store/session";
 import { LoginSignupModalProvider } from "./context/LoginSignupModalContext";
+import SplashPage from "./components/SplashPage/Splash";
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -34,6 +35,7 @@ function App() {
           <Switch>
             <Route exact path="/">
               <NavBar isLoaded={isLoaded} />
+              <SplashPage />
             </Route>
 
             <Route path="/listings/:id(\d+)">
