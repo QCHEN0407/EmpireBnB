@@ -4,12 +4,12 @@
     overflow: hidden;
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     transition: transform 100ms ease-in;
-    /* cursor: pointer; */
+
     color: black;
 }
 
 .tile__card:hover {
-  transform: scale(1.07);
+  transform: scale(1.01);
 }
 
 .tile__card > img {

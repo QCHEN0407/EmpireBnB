@@ -17,5 +17,13 @@
 .city__info {
     align-self: center;
     padding: 0px 20px;
-    line-height: 20px;
+    line-height: 8px;
+}
+
+.city__info > h3 {
+    font-size: 14px;
+}
+
+.city__info > p {
+    font-size: 14px;
 }
