@@ -10,6 +10,8 @@ import Logo from '../../../images/empirebnbLOGO/blackTLogo.png';
 import LogoBNW from '../../../images/empirebnbLOGO/whiteTLogo.png';
 import DropdownMenu from "./DropdownMenu";
 import useConsumeContext from "../../../context/LoginSignupModalContext";
+import MainSearchBar from "./MainSearchBar"
+import "./MainSearchBar.css"
 import "./NavBar.css";
 
 const NavBar = ({ isLoaded }) => {
@@ -27,10 +29,10 @@ const openMenu = () => {
 
 useEffect(() => {
   const scrollFunction = function () {
-    if (window.pageYOffset > 0) {
+    if (window.pageYOffset > 40) {
       setLogo(Logo);
       setDark("");
-    } else if (window.pageYOffset === 0) {
+    } else if (window.pageYOffset <= 40) {
       setLogo(LogoBNW);
       setDark("dark");
     }
@@ -72,20 +74,7 @@ return (
       </div>
       {showMenu && <DropdownMenu dark={dark} isLoaded={isLoaded} />}
     </div>
-
-    {/* <NavLink to="/login" exact={true} activeClassName="active">
-    Login
-          </NavLink>
-
-      <NavLink to="/sign-up" exact={true} activeClassName="active">
-      Sign Up
-          </NavLink>
-
-      <NavLink to="/users" exact={true} activeClassName="active">
-      Users
-          </NavLink>
-
-      <LogoutButton /> */}
+    <MainSearchBar dark={dark}/>
 
   </nav >
 );
