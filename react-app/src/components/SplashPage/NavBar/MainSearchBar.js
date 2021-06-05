@@ -9,7 +9,10 @@ function MainSearchBar({dark}) {
                 <input className="navbar__search__input" placeholder="check-in date"/>
                 <input className="navbar__search__input" placeholder="check-out date"/>
                 <input className="navbar__search__input" placeholder="number of guests"/>
-                <SearchIcon className="search-icon-main navbar__search__input" />
+                <div className="search-icon-main navbar__search__input">
+                    <SearchIcon />
+                    <h4>Search</h4>
+                </div>
         </div>
     )
 }

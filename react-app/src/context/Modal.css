@@ -25,7 +25,8 @@
     width: 528px;
     border-radius: 20px;
     position: absolute;
-    background-color: #a4acb6;
+    /* background-color: #a4acb6; */
+    background: linear-gradient(#a4acb6, white);
     height: fit-content;
 
 }
