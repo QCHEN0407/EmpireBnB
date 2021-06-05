@@ -74,9 +74,9 @@ input::placeholder {
     padding-left: 5px;
 }
 
-.goto__signup:hover {
+/* .goto__signup:hover {
     text-decoration: underline;
-}
+} */
 
 .goto__signup {
     font-size: 14px;
@@ -89,6 +89,6 @@ input::placeholder {
     font-weight: 500;
 }
 
-.goto__signup h3:hover {
+.goto__signup span:hover {
     text-decoration: underline;
 }

@@ -71,7 +71,7 @@ const LoginForm = () => {
           <button style={{ cursor: 'pointer' }} type="submit">Login as Guest</button>
         </div> */}
         <div className="goto__signup">
-          <p>New to Empirebnb?<span onClick={handleSignupModal} style={{ cursor: 'pointer' }}> Create an account</span></p>
+          <p>New to Empirebnb? <span onClick={handleSignupModal} style={{ cursor: 'pointer' }}> Create an account</span></p>
 
         </div>
       </form>

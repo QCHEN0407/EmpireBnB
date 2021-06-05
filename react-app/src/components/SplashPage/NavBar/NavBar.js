@@ -72,7 +72,9 @@ return (
         <MenuIcon id="menu-icon" />
         {sessionUser ? <img id="avatar" src={sessionUser.avatar} alt="" /> : <AvatarIcon id="avatar" />}
       </div>
-      {showMenu && <DropdownMenu dark={dark} isLoaded={isLoaded} />}
+      {showMenu &&
+        <DropdownMenu dark={dark} isLoaded={isLoaded} />
+      }
     </div>
     <MainSearchBar dark={dark}/>
 

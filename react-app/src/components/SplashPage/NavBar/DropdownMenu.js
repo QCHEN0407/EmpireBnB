@@ -45,7 +45,7 @@ const DropdownMenu = ({ dark, isLoaded }) => {
     }
 
     return (
-        <div className={`menu__dropdown-container ${dark}`}>
+        <div className={`menu__dropdown-container ${dark}`} onMouseLeave={()=>{setShowMenu(prevState => !prevState)}}>
             <ul className={`dropdown__list ${dark}`}>
                 <li className="dropdown__welcome">
                     {sessionUser ? <p>{`Welcome, ${sessionUser.firstName}!`}</p> : <p>{`Welcome!`}</p>}
