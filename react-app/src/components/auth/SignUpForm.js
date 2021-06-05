@@ -1,84 +1,120 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux"
-import { Redirect } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useHistory } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import useConsumeContext from '../../context/LoginSignupModalContext';
+import "./SignUpForm.css";
+
 
 const SignUpForm = () => {
-  const [username, setUsername] = useState("");
+  const { handleLoginModal } = useConsumeContext();
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errors, setErrors] = useState([]);
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+  const history = useHistory();
+
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    if (password === repeatPassword) {
-      await dispatch(signUp(username, email, password));
+
+    if (password === confirmPassword) {
+      const data = await dispatch(signUp(firstname, lastname, email, password, confirmPassword));
+      if (data?.errors) {
+        setErrors(data?.errors);
+      }
+    } else {
+      const valErrors = [...errors, "Passwords must match."]
+      setErrors(valErrors);
     }
   };
 
-  const updateUsername = (e) => {
-    setUsername(e.target.value);
-  };
+  useEffect(() => {
+    if (user) {
+      history.push(`/users/${user.id}/1`);
+    }
+  }, [user, history])
 
-  const updateEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const updatePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const updateRepeatPassword = (e) => {
-    setRepeatPassword(e.target.value);
-  };
-
-  if (user) {
-    return <Redirect to="/" />;
-  }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
-        <label>User Name</label>
-        <input
-          type="text"
-          name="username"
-          onChange={updateUsername}
-          value={username}
-        ></input>
-      </div>
-      <div>
-        <label>Email</label>
-        <input
-          type="text"
-          name="email"
-          onChange={updateEmail}
-          value={email}
-        ></input>
-      </div>
-      <div>
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          onChange={updatePassword}
-          value={password}
-        ></input>
-      </div>
-      <div>
-        <label>Repeat Password</label>
-        <input
-          type="password"
-          name="repeat_password"
-          onChange={updateRepeatPassword}
-          value={repeatPassword}
-          required={true}
-        ></input>
-      </div>
-      <button type="submit">Sign Up</button>
-    </form>
+    <div className="signup__wrapper">
+      <form onSubmit={onSignUp}>
+        <div className="signup__header">
+          <p>Sign up to Empirebnb</p>
+        </div>
+        <div className="errors">
+          {errors?.map((error) => (
+            <div key={error}>・{error}</div>
+          ))}
+        </div>
+        <div className="signup__input">
+          <input
+            type="text"
+            name="firstname"
+            placeholder="First name"
+            onChange={e => setFirstname(e.target.value)}
+            value={firstname}
+            required
+            autoComplete="off"
+          ></input>
+        </div>
+        <div className="signup__input">
+          <input
+            type="text"
+            name="lastname"
+            placeholder="Last name"
+            onChange={e => setLastname(e.target.value)}
+            value={lastname}
+            required
+            autoComplete="off"
+          ></input>
+        </div>
+        <div className="signup__input">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+            required
+            autoComplete="off"
+          ></input>
+        </div>
+        <div className="signup__input">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={e => setPassword(e.target.value)}
+            value={password}
+            required
+            autoComplete="off"
+          ></input>
+        </div>
+        <div className="signup__input">
+          <input
+            type="password"
+            placeholder="Confirm password"
+            name="confirm_password"
+            onChange={e => setConfirmPassword(e.target.value)}
+            value={confirmPassword}
+            required
+            autoComplete="off"
+          ></input>
+        </div>
+        <div className="signup__button">
+          <button style={{ cursor: 'pointer' }} type="submit">Sign Up</button>
+        </div>
+        <div className="goto__login">
+          <p>Already have an account? </p>
+          <h3 onClick={handleLoginModal} style={{ cursor: 'pointer' }}>Log in instead</h3>
+        </div>
+      </form>
+    </div>
   );
 };
 

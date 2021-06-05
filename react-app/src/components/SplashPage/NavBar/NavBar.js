@@ -20,7 +20,7 @@ const history = useHistory();
 const sessionUser = useSelector(state => state.session.user);
 
 const openMenu = () => {
-  setShowMenu((prevState) => !prevState);
+  setShowMenu(!showMenu);
   setShowLogin(false);
   setShowSignUp(false);
 };

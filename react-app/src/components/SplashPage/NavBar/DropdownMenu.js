@@ -8,7 +8,7 @@ import useConsumeContext from "../../../context/LoginSignupModalContext";
 const DropdownMenu = ({ dark, isLoaded }) => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const { showMenu, setShowMenu, setShowLogin, setShowSignUp } = useConsumeContext();
+    const {setShowMenu} = useConsumeContext();
     const history = useHistory();
 
     const logout = (e) => {

@@ -22,7 +22,7 @@ function App() {
       await dispatch(authenticate());
       setIsLoaded(true);
     })();
-  }, []);
+  }, [dispatch]);
 
   if (!isLoaded) {
     return null;
