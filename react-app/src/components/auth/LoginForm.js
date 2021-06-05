@@ -35,7 +35,7 @@ const LoginForm = () => {
     <div className="login__wrapper">
       <form onSubmit={onLogin}>
         <div className="login__header">
-          <p>Login to Empirebnb</p>
+          <h1>Login to Empirebnb</h1>
         </div>
         <div className="errors">
           {errors.map((error) => (
@@ -67,9 +67,12 @@ const LoginForm = () => {
         <div className="login__button">
           <button style={{ cursor: 'pointer' }} type="submit">Login</button>
         </div>
+        {/* <div className="login__button">
+          <button style={{ cursor: 'pointer' }} type="submit">Login as Guest</button>
+        </div> */}
         <div className="goto__signup">
-          <p>New to Empirebnb?</p>
-          <h3 onClick={handleSignupModal} style={{ cursor: 'pointer' }}>Create an account</h3>
+          <p>New to Empirebnb?<span onClick={handleSignupModal} style={{ cursor: 'pointer' }}> Create an account</span></p>
+
         </div>
       </form>
     </div>

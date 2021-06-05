@@ -19,12 +19,14 @@
 }
 
 #modal-content {
-    height: 464px;
+    /* height: 464px; */
     height: auto;
     width: 528px;
     border-radius: 20px;
     position: absolute;
-    background-color: white;
+    /* background-color: white; */
+    height: fit-content;
+    background-image: url("https://empirebnb.s3.us-east-2.amazonaws.com/ny__images/darkGrey.jpg");
 }
 
 #modal__close-button {

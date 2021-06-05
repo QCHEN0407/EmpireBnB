@@ -1,74 +1,90 @@
-.login__wrapper {
+/* .login__wrapper {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    border-radius: 10px;
-    padding: 70px 30px;
-    font-family: Circular -apple-system, BlinkMacSystemFont, “Segoe UI”, “Roboto”, “Oxygen”,“Ubuntu”, “Cantarell”, “Fira Sans”, “Droid Sans”, “Helvetica Neue”,sans-serif;
-}
-
-.login__header {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    padding: 10px 0px ;
+    height: 464px;
+    width: 528px;
+} */
+
+.error__validation {
+    padding-left: 10px;
+    font-style: italic;
 }
 
-.login__header img {
-    height: 25px;
-    margin-left: 6px;
-    margin-right: 6px;
-}
-
-.login__input {
+.login__wrapper {
+    /* height: 400px;
+    width: 484px; */
     display: flex;
-    padding: 10px 30px;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    box-sizing: border-box;
+    padding: 50px;
+    height: fit-content;
+    /* background-image: url("https://empirebnb.s3.us-east-2.amazonaws.com/ny__images/420201.jpg"); */
+    /* align-items: center; */
+
+}
+
+.login__header h1{
+    font-size: 22px;
 }
 
 .login__input input {
-    padding: 11px 12px;
-    width: 100% ;
-    height: 32px;
-    outline-width: 0;
-    border-radius: 4px;
-    border: 1px solid rgba(29, 28, 29, 0.384);
     box-sizing: border-box;
+    height: 54px;
+    outline-width: 0.5px;
+    outline-color: black;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.438);
 }
 
-.login__button {
-    display: flex;
-    padding: 10px 30px;
-
+input::placeholder {
+    font-size: 18px;
 }
 
 .login__button button {
-    width: 100%;
-    height: 32px;
-    border: none;
+    background-color: #f48c54;
     color: white;
-    background-color: #4a154b;
-    border-radius: 4px;
-    font-weight: 900;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    /* margin-top: 20px; */
 }
 
-.login__button button:hover{
-    opacity: 0.9;
+.login__button button:hover {
+    background-color: #f4744c;
+    cursor: pointer;
 }
 
-.goto__signup{
-    padding: 8px 30px;
-    font-size: 13px;
-    text-align: right;
-
+.goto__signup {
+    font-size: 14px;
+    color: #222222;
+    font-weight: bold;
+    padding-left: 5px;
 }
 
-.goto__signup p {
-    color: #616061;
-    padding-bottom: 6px;
+.goto__signup:hover {
+    text-decoration: underline;
 }
 
-.goto__signup h3 {
+.goto__signup {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.goto__signup span {
     color: #1264a3;
     font-weight: 500;
 }
