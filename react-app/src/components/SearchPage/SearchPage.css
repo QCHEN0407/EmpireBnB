@@ -5,8 +5,65 @@
 
 .search_listing-container {
     overflow-x: auto;
+    width: 90%;
+    margin-left: 5%;
 }
 
-.google__maps-container {
+.google__maps-container > div {
     position: sticky;
+    top: 80px;
+}
+
+.search__listings-info {
+    padding-bottom: 32px;
+    border-bottom: 1px solid lightgray;
+}
+
+.search__listings-info > p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.search__listings-info > h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.search__listings-info > button {
+    border-radius: 30px;
+    text-transform: inherit;
+    margin-right: 10px;
+    outline-width: 0px;
+    border: 1px solid #B0B0B0;
+    background-color: white;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #222222;
+    height: 36px;
+    cursor: not-allowed;
+}
+
+.search__listings-info > button p {
+    font-family: Circular -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: auto;
+}
+
+.no__stays {
+    line-height: 26px;
+}
+
+.no__stays h4 {
+    padding-top: 32px;
+    font-size: 22px;
+    color: #222222;
+    font-weight: 600; 
+}
+
+.no__stays p {
+    font-size: 16px;
+    color: #222222;
 }

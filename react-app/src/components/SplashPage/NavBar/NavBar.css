@@ -240,6 +240,7 @@
   }
 
   .menu__dropdown-container.dark {
+      z-index: 200;
       background-color: black;
       /* border: 1px solid lightgray; */
       box-shadow: 0px 0px 8px 2px rgb(59, 58, 58);

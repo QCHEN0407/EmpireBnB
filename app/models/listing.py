@@ -47,5 +47,5 @@ class Listing(db.Model):
             "rating": str(self.rating),
             "created_at": self.created_at,
             "updated_at": self.updated_at,
-            "images": {image.id: image.to_dict() for image in self.images}
+            "images": [image.to_dict() for image in self.images]
     }
