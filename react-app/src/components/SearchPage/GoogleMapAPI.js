@@ -1,6 +1,6 @@
 import React, {useRef, useCallback} from "react";
 import { GoogleMap, useLoadScript, Marker} from "@react-google-maps/api";
-import CustomMarker from "../../images/marker.png";
+import CustomMarker from "../../images/map_marker/house_icon.png";
 import { NavLink, useHistory } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -56,9 +56,10 @@ const GoogleMapAPI = ({ listings }) =>  {
                 <Marker 
                     key={listing.id}
                     position={{ lat: listing.latitude, lng: listing.longitude}}
-                    label={{color: 'white', fontWeight: '600', fontSize: '14px', text: `$${listing.price}` }}
+                    //label={{color: 'black', fontWeight: '600', fontSize: '12px', text: `$${listing.price}` }}
                     icon={{
                         url: CustomMarker,
+                        //scaledSize: new window.google.maps.Size(42, 35),
                         scaledSize: new window.google.maps.Size(42, 35),
                         labelOrigin: new window.google.maps.Point(21, 13),
                         anchor: new window.google.maps.Point(15, 15)
