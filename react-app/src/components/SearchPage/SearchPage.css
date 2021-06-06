@@ -1,6 +1,7 @@
 .search-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.75fr;
+    /* background-color: #57525d; */
 }
 
 .search_listing-container {
@@ -60,7 +61,7 @@
     padding-top: 32px;
     font-size: 22px;
     color: #222222;
-    font-weight: 600; 
+    font-weight: 600;
 }
 
 .no__stays p {

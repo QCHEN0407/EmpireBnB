@@ -46,3 +46,11 @@ class User(db.Model, UserMixin):
       "email": self.email,
       "listings":  {listing.id: listing.to_dict() for listing in self.listings}
     }
+
+  def to_dict_simple(self):
+    return {
+      "id": self.id,
+      "firstName": self.firstName,
+      "lastName": self.lastName,
+      "email": self.email
+    }

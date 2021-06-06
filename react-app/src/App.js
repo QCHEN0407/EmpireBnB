@@ -13,6 +13,7 @@ import { LoginSignupModalProvider } from "./context/LoginSignupModalContext";
 import SplashPage from "./components/SplashPage/Splash";
 import NavBarWhite from "./components/SplashPage/NavBar/NavBarWhite";
 import SearchPage from "./components/SearchPage/SearchPage";
+import ListingDetail from "./components/ListingDetailPage/ListingDetail";
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -43,6 +44,8 @@ function App() {
             </Route>
 
             <Route path="/listings/:id(\d+)">
+              <NavBarWhite />
+              <ListingDetail />
             </Route>
 
             <Route path="/bookings">
