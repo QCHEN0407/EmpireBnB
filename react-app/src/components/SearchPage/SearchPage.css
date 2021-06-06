@@ -1,0 +1,12 @@
+.search-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.search_listing-container {
+    overflow-x: auto;
+}
+
+.google__maps-container {
+    position: sticky;
+}

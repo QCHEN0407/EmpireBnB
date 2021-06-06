@@ -11,6 +11,8 @@ import Footer from "./components/Footer/Footer";
 import { authenticate } from "./store/session";
 import { LoginSignupModalProvider } from "./context/LoginSignupModalContext";
 import SplashPage from "./components/SplashPage/Splash";
+import NavBarWhite from "./components/SplashPage/NavBar/NavBarWhite";
+import SearchPage from "./components/SearchPage/SearchPage";
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -47,6 +49,8 @@ function App() {
             </Route>
 
             <Route exact path="/search">
+              <NavBarWhite />
+              <SearchPage />
             </Route>
 
             <Route path="/search/:category">
