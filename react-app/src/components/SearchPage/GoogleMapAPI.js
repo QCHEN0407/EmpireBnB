@@ -52,7 +52,7 @@ const GoogleMapAPI = ({ listings }) =>  {
                 options={options}
                 onLoad={onMapLoad}
             >
-            {listings.map(listing => (
+            {listings?.map(listing => (
                 <Marker 
                     key={listing.id}
                     position={{ lat: listing.latitude, lng: listing.longitude}}

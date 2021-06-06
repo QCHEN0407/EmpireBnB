@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./SearchPage.css";
 import GoogleMapAPI from "./GoogleMapAPI";
+import { getListings } from "../../store/listing";
 
 function SearchPage() {
 
-    let listings = [];
+    const listings = useSelector(state => state.listings);
+    console.log(listings.listings);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getListings());
+    }, [dispatch]);
 
     return (
         <div className="search-container">
@@ -12,7 +20,7 @@ function SearchPage() {
                 Listing
             </div>
             <div className="google__maps-container">
-                <GoogleMapAPI listings={Array.from(listings)}/>
+                <GoogleMapAPI listings={listings.listings}/>
             </div>
         </div>
     )
