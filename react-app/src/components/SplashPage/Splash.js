@@ -13,7 +13,7 @@ import Newport from "../../images/homepage/explore_Newport.jpeg";
 import Hudson from "../../images/homepage/explore_Hudson.jpeg";
 import OceanCity from "../../images/homepage/explore_OceanCity.jpeg";
 import CapeMay from "../../images/homepage/explore_CapeMay.jpeg";
-// import { getListings } from "../../store/listing";
+import { getListings } from "../../store/listing";
 import useConsumeContext from "../../context/LoginSignupModalContext";
 import Banner from './Banner';
 import Tile from "./Tile";
@@ -21,13 +21,13 @@ import City from "./City";
 import "./Splash.css";
 
 const SplashPage = () => {
-  // const listings = useSelector(state => state.listing);
+  const listings = useSelector(state => state.listings);
   const { setShowMenu } = useConsumeContext();
   const dispatch = useDispatch();
 
   useEffect(() => {
     setShowMenu(false);
-    // dispatch(getListings());
+    dispatch(getListings());
   }, [dispatch, setShowMenu]);
 
   return (
