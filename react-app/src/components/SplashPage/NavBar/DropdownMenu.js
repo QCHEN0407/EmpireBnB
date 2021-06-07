@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import LoginFormModal from '../../auth/LoginFormModal';
 import SignUpFormModal from "../../auth/SignUpFormModal";
 import useConsumeContext from "../../../context/LoginSignupModalContext";
+import {logout} from "../../../store/session"
 
 const DropdownMenu = ({ dark, isLoaded }) => {
     const dispatch = useDispatch();
@@ -11,10 +12,8 @@ const DropdownMenu = ({ dark, isLoaded }) => {
     const {setShowMenu} = useConsumeContext();
     const history = useHistory();
 
-    const logout = (e) => {
-        e.preventDefault();
-        history.push("/");
-        // dispatch(sessionActions.logout());
+    const onlogout = async (e) => {
+        await dispatch(logout());
         setShowMenu(false);
     };
 
@@ -27,7 +26,7 @@ const DropdownMenu = ({ dark, isLoaded }) => {
                     <NavLink to={`/users/${sessionUser.id}`}>Profile</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/logout" onClick={logout}>Log Out</NavLink>
+                    <NavLink to="/" onClick={onlogout}>Log Out</NavLink>
                 </li>
             </>
         );
@@ -45,12 +44,13 @@ const DropdownMenu = ({ dark, isLoaded }) => {
     }
 
     return (
-        <div className={`menu__dropdown-container ${dark}`} onMouseLeave={()=>{setShowMenu(prevState => !prevState)}}>
+        // TODO: add to the right place: onMouseLeave={()=>{setShowMenu(prevState => !prevState)}}
+        <div className={`menu__dropdown-container ${dark}`}>
             <ul className={`dropdown__list ${dark}`}>
                 <li className="dropdown__welcome">
                     {sessionUser ? <p>{`Welcome, ${sessionUser.firstName}!`}</p> : <p>{`Welcome!`}</p>}
                 </li>
-                {isLoaded && sessionLinks}
+                {sessionLinks}
             </ul>
         </div>
     );

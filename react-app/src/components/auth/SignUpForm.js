@@ -23,7 +23,7 @@ const SignUpForm = () => {
     e.preventDefault();
 
     if (password === confirmPassword) {
-      const data = await dispatch(signUp(firstname, lastname, email, password, confirmPassword));
+      const data = await dispatch(signUp(firstname, lastname, email, password));
       if (data?.errors) {
         setErrors(data?.errors);
       }
@@ -35,43 +35,44 @@ const SignUpForm = () => {
 
   useEffect(() => {
     if (user) {
-      history.push(`/users/${user.id}/1`);
+      history.push(`/users/${user.id}`);
     }
   }, [user, history])
-
 
   return (
     <div className="signup__wrapper">
       <form onSubmit={onSignUp}>
         <div className="signup__header">
-          <p>Sign up to Empirebnb</p>
+          <h1>Sign up to Empirebnb</h1>
         </div>
         <div className="errors">
           {errors?.map((error) => (
             <div key={error}>・{error}</div>
           ))}
         </div>
-        <div className="signup__input">
-          <input
-            type="text"
-            name="firstname"
-            placeholder="First name"
-            onChange={e => setFirstname(e.target.value)}
-            value={firstname}
-            required
-            autoComplete="off"
-          ></input>
-        </div>
-        <div className="signup__input">
-          <input
-            type="text"
-            name="lastname"
-            placeholder="Last name"
-            onChange={e => setLastname(e.target.value)}
-            value={lastname}
-            required
-            autoComplete="off"
-          ></input>
+        <div className="fullname__input">
+          <div className="signup__input">
+            <input
+              type="text"
+              name="firstname"
+              placeholder="First name"
+              onChange={e => setFirstname(e.target.value)}
+              value={firstname}
+              required
+              autoComplete="off"
+            ></input>
+          </div>
+          <div className="signup__input">
+            <input
+              type="text"
+              name="lastname"
+              placeholder="Last name"
+              onChange={e => setLastname(e.target.value)}
+              value={lastname}
+              required
+              autoComplete="off"
+            ></input>
+          </div>
         </div>
         <div className="signup__input">
           <input

@@ -12,28 +12,26 @@
 }
 
 
-.signup__input {
-    height: 440px;
-    width: 484px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.signup__input input {
     box-sizing: border-box;
-    padding: 20px;
+    height: 54px;
+    outline-width: 0.5px;
+    outline-color: black;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.438);
 }
 
 .signup__input > h2 {
     font-size: 22px;
 }
 
-.fullname__input {
-    display: flex;
-    justify-content: space-between;
-}
-
 .signup__input input {
     box-sizing: border-box;
-    height: 54px;
+    height: 40px;
     outline-width: 0.5px;
     outline-color: black;
     padding: 15px;
@@ -48,7 +46,7 @@ input::placeholder {
     font-size: 18px;
 }
 
-.signup__button {
+.signup__button button {
     background-color: #f48c54;
     color: white;
     height: 48px;
@@ -69,19 +67,21 @@ input::placeholder {
     cursor: pointer;
 }
 
-
-/* #login__link {
-    font-size: 14px;
-    color: #222222;
-    font-weight: bold;
-    padding-left: 5px;
+.signup__header h1 {
+    font-size: 22px;
 }
-
-#login__link:hover {
-    text-decoration: underline;
-} */
 
 .goto__login {
     font-size: 14px;
     cursor: pointer;
+}
+
+
+.fullname__input {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fullname__input .signup__input {
+    width: 48%;
 }

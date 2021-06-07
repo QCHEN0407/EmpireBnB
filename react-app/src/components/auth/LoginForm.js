@@ -26,7 +26,7 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (user) {
-      history.push(`/users/${user.id}/1`);
+      history.push(`/users/${user.id}`);
     }
   }, [user, history])
 

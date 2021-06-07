@@ -1,10 +1,4 @@
-/* .login__wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 464px;
-    width: 528px;
-} */
+
 
 .error__validation {
     padding-left: 10px;
@@ -12,17 +6,13 @@
 }
 
 .login__wrapper {
-    /* height: 400px;
-    width: 484px; */
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
     box-sizing: border-box;
     padding: 50px;
     height: fit-content;
     /* background-image: url("https://empirebnb.s3.us-east-2.amazonaws.com/ny__images/420201.jpg"); */
     /* align-items: center; */
-
 }
 
 .login__header h1{
