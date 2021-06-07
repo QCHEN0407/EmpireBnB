@@ -14,6 +14,7 @@ import SplashPage from "./components/SplashPage/Splash";
 import NavBarWhite from "./components/SplashPage/NavBar/NavBarWhite";
 import SearchPage from "./components/SearchPage/SearchPage";
 import ListingDetail from "./components/ListingDetailPage/ListingDetail";
+import ScrollToTop from "./context/ScrollToTop";
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -36,6 +37,7 @@ function App() {
       <LoginSignupModalProvider>
         {isLoaded && (
           <BrowserRouter>
+          <ScrollToTop />
           <Switch>
             <Route exact path="/">
               <NavBar isLoaded={isLoaded} />

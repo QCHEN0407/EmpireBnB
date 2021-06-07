@@ -7,7 +7,7 @@ import "./LoginForm.css";
 
 
 const LoginForm = () => {
-  const { handleSignupModal } = useConsumeContext();
+  const { handleSignupModal,  setShowMenu } = useConsumeContext();
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,7 +22,17 @@ const LoginForm = () => {
     if (data.errors) {
       setErrors(data.errors);
     }
+    setShowMenu();
   };
+
+  const loginDemoUser = async (e) => {
+    e.preventDefault();
+    const data = await dispatch(login("demo@aa.io", "password"));
+    if (data.errors) {
+      setErrors(data.errors);
+    }
+    setShowMenu();
+  }
 
   useEffect(() => {
     if (user) {
@@ -71,7 +81,7 @@ const LoginForm = () => {
           <button style={{ cursor: 'pointer' }} type="submit">Login as Guest</button>
         </div> */}
         <div className="goto__signup">
-          <p>New to Empirebnb? <span onClick={handleSignupModal} style={{ cursor: 'pointer' }}> Create an account</span></p>
+          <p>New to Empirebnb? <span onClick={handleSignupModal} style={{ cursor: 'pointer' }}> Create an account</span> or <span onClick={loginDemoUser}>Login as Demo User</span></p>
 
         </div>
       </form>
