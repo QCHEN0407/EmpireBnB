@@ -46,6 +46,7 @@ function App() {
             <Route path="/listings/:id(\d+)">
               <NavBarWhite />
               <ListingDetail />
+              <Footer />
             </Route>
 
             <Route path="/bookings">

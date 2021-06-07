@@ -33,6 +33,13 @@ const ListingDetail = () => {
     const bed = listing?.num_beds;
     const bath = listing?.num_baths;
     const guest = listing?.num_guests;
+    
+    const img1 = listing?.images[0]?.url;
+    const img2 = listing?.images[1]?.url;
+    const img3 = listing?.images[2]?.url;
+    const img4 = listing?.images[3]?.url;
+    const img5 = listing?.images[4]?.url;
+
 
     useEffect(() => {
         setShowMenu(false);
@@ -55,11 +62,12 @@ const ListingDetail = () => {
                     </div>
                 </div>
                 <div className="listing_imgs_container">
-
+                    <img className = "listing_imgs_container-img1" src={img1} alt="master img"/>
+                    <img className = "listing_imgs_container-img2" src={img2} alt="img2"/>
+                    <img className = "listing_imgs_container-img3" src={img3} alt="img3"/>
+                    <img className = "listing_imgs_container-img4" src={img4} alt="img4"/>
+                    <img className = "listing_imgs_container-img5" src={img5} alt="img5"/>
                 </div>
-                {/* <div className="listing__image">
-                    <ImageSlider imagesArray={imagesArray} />
-                </div> */}
                 <div className="listing__features">
                     <div className="description__info">
                         <h1>{`${listing?.type} hosted by ${host?.firstName} ${host?.lastName}`}</h1>
