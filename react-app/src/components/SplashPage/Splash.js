@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import EntireHomes from "../../images/homepage/entireHome.jpeg";
-import UniqueStays from "../../images/homepage/uniqueStays.jpeg";
+import UniqueStays from "../../images/homepage/cityViewStays.jpeg";
 import Outdoor from "../../images/homepage/outdoorGetaway2.jpeg";
 import PetsAllowed from "../../images/homepage/petAllowed.jpeg";
 import Montauk from "../../images/homepage/explore_Montauk.jpeg";
@@ -104,7 +104,7 @@ const SplashPage = () => {
         <NavLink to={`/search/unique_stays`} style={{ textDecoration: "none", color: "inherit" }}>
           <Tile
             src={UniqueStays}
-            title="Unique stays"
+            title="CityView Stays"
             />
         </NavLink>
         <NavLink to={`/search/outdoor_getaways`} style={{ textDecoration: "none", color: "inherit" }}>
@@ -129,7 +129,7 @@ const SplashPage = () => {
         </div>
 
       </div>
-
+      <h1 className="tile__title">Featured Homes</h1>
       <div className='tile__container'>
         {/* <div id="featured_homes"></div> */}
         <NavLink to={`/listings/`} style={{ textDecoration: "none" }}>
