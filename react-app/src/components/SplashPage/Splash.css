@@ -26,18 +26,19 @@
     /* top: -150px; */
 /* } */
 
-.getAway_poster{
+.getAway_poster {
+    display: flex;
     justify-content: center;
-    height: 400px;
-    /* background-repeat: no-repeat; */
-    /* padding: 20px 80px 10px 80px; */
-
+    border-radius: 20px;
+    padding-top: 20px;
 }
 .getAway_poster img{
     justify-content: center;
-    width: 100%;
-    padding: 40px 90px 0px 90px;
-
+    width: 88%;
+    /* padding: 40px 90px 0px 90px; */
+    height: 500px;
+    border-radius: 10px;
+    /* object-fit: cover; */
 }
 
 body {

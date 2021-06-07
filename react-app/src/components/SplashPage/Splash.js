@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import EntireHomes from "../../images/homepage/entire-homes.webp";
-import UniqueStays from "../../images/homepage/unique-stays.webp";
-import Outdoor from "../../images/homepage/farms-and-nature.webp";
-import PetsAllowed from "../../images/homepage/pets-allowed.webp";
+import EntireHomes from "../../images/homepage/entireHome.jpeg";
+import UniqueStays from "../../images/homepage/uniqueStays.jpeg";
+import Outdoor from "../../images/homepage/outdoorGetaway.jpeg";
+import PetsAllowed from "../../images/homepage/petAllowed.jpeg";
 import Montauk from "../../images/homepage/explore_Montauk.jpeg";
 import Woodstock from "../../images/homepage/explore_Woodstock.jpeg";
 import AtlanticCity from "../../images/homepage/explore_AtlanticCity.jpeg";
@@ -123,7 +123,7 @@ const SplashPage = () => {
       <div className="getAway_poster">
         <img src="//empirebnb.s3.us-east-2.amazonaws.com/ny__images/outdoor_001.jpeg"></img>
       </div>
-      {/* <h1 className="tile__title">Featured Homes</h1> */}
+      
       <div className='tile__container'>
         {/* <div id="featured_homes"></div> */}
         <NavLink to={`/listings/`} style={{ textDecoration: "none" }}>

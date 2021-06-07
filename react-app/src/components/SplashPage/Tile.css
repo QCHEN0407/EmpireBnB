@@ -4,7 +4,6 @@
     overflow: hidden;
     box-shadow: 0px 6px 18px -9px rgba(0, 0, 0, 0.75);
     transition: transform 100ms ease-in;
-
     color: black;
 }
 
@@ -15,15 +14,17 @@
 .tile__card > img {
     object-fit: fill;
     min-width: 300px;
-    min-height: 200px;
+    min-height: 250px;
     width: 100%;
+    object-fit: cover;
 }
 
 .tile__info {
     margin-top: -4px;
     border-radius: 10px;
-    padding: 20px;
+    padding: 1px;
     border: 1;
+    text-align: center;
 }
 
 .tile__info > h2 {
