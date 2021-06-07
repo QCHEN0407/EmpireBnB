@@ -22,9 +22,9 @@
 .tile__info {
     margin-top: -4px;
     border-radius: 10px;
-    padding: 1px;
+    padding: 4px 15px 4px 10px;
     border: 1;
-    text-align: center;
+    text-align: left ;
 }
 
 .tile__info > h2 {

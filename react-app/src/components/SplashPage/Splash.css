@@ -20,6 +20,7 @@
 }
 
 
+
 /* A DIV THAT IS HIDDEN */
 /* #live_anywhere, #featured_homes {
     /* position: absolute; */
@@ -47,6 +48,10 @@
     left:10%;
     margin-top: 40px;
 
+}
+
+.listing_tile{
+    text-align: left;
 }
 
 .outdoorBanner_text h1{

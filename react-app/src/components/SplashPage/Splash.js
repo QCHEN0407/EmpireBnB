@@ -140,7 +140,7 @@ const SplashPage = () => {
           <Tile
             src={image1}
             title={listings?.[0].title}
-            description={listings?.[0].description}
+            description={listings?.[0].description.substring(0,150) + "..."}
             price={`$${listings?.[0].price} / night`}
           />
         </NavLink>
@@ -148,7 +148,7 @@ const SplashPage = () => {
           <Tile
             src={image2}
             title={listings?.[1].title}
-            description={listings?.[1].description}
+            description={listings?.[1].description.substring(0,150) + "..."}
             price={`$${listings?.[1].price} / night`}
           />
         </NavLink>
@@ -156,7 +156,7 @@ const SplashPage = () => {
           <Tile
             src={image3}
             title={listings?.[2].title}
-            description={listings?.[2].description}
+            description={listings?.[2].description.substring(0,150) + "..."}
             price={`$${listings?.[2].price} / night`}
           />
         </NavLink>
@@ -164,7 +164,7 @@ const SplashPage = () => {
           <Tile
             src={image4}
             title={listings?.[3].title}
-            description={listings?.[3].description}
+            description={listings?.[3].description.substring(0,150) + "..."}
             price={`$${listings?.[3].price} / night`}
           />
         </NavLink>
