@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import EntireHomes from "../../images/homepage/entireHome.jpeg";
 import UniqueStays from "../../images/homepage/uniqueStays.jpeg";
-import Outdoor from "../../images/homepage/outdoorGetaway.jpeg";
+import Outdoor from "../../images/homepage/outdoorGetaway2.jpeg";
 import PetsAllowed from "../../images/homepage/petAllowed.jpeg";
 import Montauk from "../../images/homepage/explore_Montauk.jpeg";
 import Woodstock from "../../images/homepage/explore_Woodstock.jpeg";
@@ -121,9 +121,15 @@ const SplashPage = () => {
         </NavLink>
       </div>
       <div className="getAway_poster">
-        <img src="//empirebnb.s3.us-east-2.amazonaws.com/ny__images/outdoor_001.jpeg"></img>
+        <img src="https://empirebnb.s3.us-east-2.amazonaws.com/ny__images/getaway_banner.jpeg"></img>
+        <div className="outdoorBanner_text">
+          <h1>The<br/>Greatest Outdoors</h1>
+          <p>Wishlists curated by Empirebnb.</p>
+          <button>Get inspired</button>
+        </div>
+
       </div>
-      
+
       <div className='tile__container'>
         {/* <div id="featured_homes"></div> */}
         <NavLink to={`/listings/`} style={{ textDecoration: "none" }}>

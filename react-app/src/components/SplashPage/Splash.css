@@ -33,12 +33,38 @@
     padding-top: 20px;
 }
 .getAway_poster img{
+    opacity: 0.83;
     justify-content: center;
     width: 88%;
     /* padding: 40px 90px 0px 90px; */
     height: 500px;
     border-radius: 10px;
     /* object-fit: cover; */
+}
+.outdoorBanner_text{
+    color: #FEFCFB;
+    position: absolute;
+    left:10%;
+    margin-top: 40px;
+
+}
+
+.outdoorBanner_text h1{
+    font-size: 49px;
+    font-weight: 600;
+}
+.outdoorBanner_text p{
+    margin-top: -20px;
+}
+.outdoorBanner_text button{
+    background-color: #FEFCFB;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 50px;
+
 }
 
 body {
