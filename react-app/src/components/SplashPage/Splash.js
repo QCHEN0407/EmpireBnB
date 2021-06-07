@@ -21,7 +21,7 @@ import City from "./City";
 import "./Splash.css";
 
 const SplashPage = () => {
-  const listings = useSelector(state => state.listings);
+  const listings = useSelector(state => state.listings.listings);
   const { setShowMenu } = useConsumeContext();
   const dispatch = useDispatch();
 
@@ -29,6 +29,11 @@ const SplashPage = () => {
     setShowMenu(false);
     dispatch(getListings());
   }, [dispatch, setShowMenu]);
+
+  const image1 = listings?.[0].images[0].url;
+  const image2 = listings?.[1].images[0].url;
+  const image3 = listings?.[2].images[0].url;
+  const image4 = listings?.[3].images[0].url;
 
   return (
     <>
@@ -129,39 +134,38 @@ const SplashPage = () => {
         </div>
 
       </div>
-      <h1 className="tile__title">Featured Homes</h1>
+      <h1 className="tile__title">Become a NewYorker</h1>
       <div className='tile__container'>
-        {/* <div id="featured_homes"></div> */}
-        <NavLink to={`/listings/`} style={{ textDecoration: "none" }}>
+        <NavLink to={`/listings/${listings?.[0].id}`} style={{ textDecoration: "none" }}>
           <Tile
-            src={Newport}
-            title={`title 2`}
-            description="Indulge in a genuine Finnish sauna and shower outdoors surrounded by bamboo in this luxurious spa retreat just 15 minutes from downtown Seattle."
-            price={`$100 / night`}
+            src={image1}
+            title={listings?.[0].title}
+            description={listings?.[0].description}
+            price={`$${listings?.[0].price} / night`}
           />
         </NavLink>
-        <NavLink to={`/listings/`} style={{ textDecoration: "none" }}>
+        <NavLink to={`/listings/${listings?.[1].id}`} style={{ textDecoration: "none" }}>
           <Tile
-            src={Hudson}
-            title={`title 1`}
-            description="A stunning, serene, and cozy apartment in the heart of Seattle, with vaulted ceilings, wood paneling, mid-century decor, and a heated bathroom tile floor."
-            price={`$100 / night`}
+            src={image2}
+            title={listings?.[1].title}
+            description={listings?.[1].description}
+            price={`$${listings?.[1].price} / night`}
           />
         </NavLink>
-        <NavLink to={`/listings/`} style={{ textDecoration: "none" }}>
+        <NavLink to={`/listings/${listings?.[2].id}`} style={{ textDecoration: "none" }}>
           <Tile
-            src={CapeMay}
-            title={`title 4`}
-            description="Wake up feeling recharged in this open-plan and cozy apartment ideal for lounging. Experience a private retreat just minutes from the city."
-            price={`$100 / night`}
+            src={image3}
+            title={listings?.[2].title}
+            description={listings?.[2].description}
+            price={`$${listings?.[2].price} / night`}
           />
         </NavLink>
-        <NavLink to={`/listings/`} style={{ textDecoration: "none" }}>
+        <NavLink to={`/listings/${listings?.[3].id}`} style={{ textDecoration: "none" }}>
           <Tile
-            src={AtlanticCity}
-            title={`title 3`}
-            description="This home boasts eclectic furnishings and decor, splashes of bright color throughout, contrasting rustic modern finishes, and an exclusive guest patio."
-            price={`$100 / night`}
+            src={image4}
+            title={listings?.[3].title}
+            description={listings?.[3].description}
+            price={`$${listings?.[3].price} / night`}
           />
         </NavLink>
       </div>
