@@ -24,7 +24,7 @@
     padding: 3px 5px;
     font-size: 22px;
     justify-content: center;
-    background-color: #f48c54;
+    background-color: #E37F0E;
     color: white;
 }
 
@@ -45,5 +45,5 @@
 }
 
 .navbar__search__input:hover {
-    background-color: #f4744c;
+    background-color: #E37F0E;
 }

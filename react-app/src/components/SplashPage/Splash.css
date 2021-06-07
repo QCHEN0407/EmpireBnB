@@ -4,6 +4,8 @@
     grid-auto-flow: row;
     padding: 20px 80px 0px 80px;
     color: black;
+    /* background-color: #FFFCF2; */
+    background-color: #FEFCFB;
 }
 
 .tile__container {
@@ -19,9 +21,23 @@
 
 
 /* A DIV THAT IS HIDDEN */
-#live_anywhere, #featured_homes {
-    position: absolute;
-    top: -150px;
+/* #live_anywhere, #featured_homes {
+    /* position: absolute; */
+    /* top: -150px; */
+/* } */
+
+.getAway_poster{
+    justify-content: center;
+    height: 400px;
+    /* background-repeat: no-repeat; */
+    /* padding: 20px 80px 10px 80px; */
+
+}
+.getAway_poster img{
+    justify-content: center;
+    width: 100%;
+    padding: 40px 90px 0px 90px;
+
 }
 
 body {

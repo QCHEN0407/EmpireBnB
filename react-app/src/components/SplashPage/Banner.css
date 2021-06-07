@@ -25,6 +25,8 @@
 }
 
 .banner__message > p {
-    color: #f48c54;
+    /* color: #f48c54; */
+    color: #E37F0E;
     font-size: 30px;
+    font-weight: 700;
 }

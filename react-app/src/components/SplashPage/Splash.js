@@ -120,9 +120,12 @@ const SplashPage = () => {
             />
         </NavLink>
       </div>
-      <h1 className="tile__title">Featured Homes</h1>
+      <div className="getAway_poster">
+        <img src="//empirebnb.s3.us-east-2.amazonaws.com/ny__images/outdoor_001.jpeg"></img>
+      </div>
+      {/* <h1 className="tile__title">Featured Homes</h1> */}
       <div className='tile__container'>
-        <div id="featured_homes"></div>
+        {/* <div id="featured_homes"></div> */}
         <NavLink to={`/listings/`} style={{ textDecoration: "none" }}>
           <Tile
             src={Newport}

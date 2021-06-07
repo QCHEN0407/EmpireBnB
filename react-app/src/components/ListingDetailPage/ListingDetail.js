@@ -54,6 +54,9 @@ const ListingDetail = () => {
                         <span className="listing__location">{`${listing?.city}, ${listing?.state}, United States`}</span>
                     </div>
                 </div>
+                <div className="listing_imgs_container">
+
+                </div>
                 {/* <div className="listing__image">
                     <ImageSlider imagesArray={imagesArray} />
                 </div> */}
