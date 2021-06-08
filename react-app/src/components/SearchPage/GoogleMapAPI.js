@@ -43,8 +43,8 @@ const GoogleMapAPI = ({ listings }) =>  {
     if (!isLoaded) return "Loading...";
 
     return (
-        <div>  
-            <GoogleMap 
+        <div>
+            <GoogleMap
                 id="map"
                 mapContainerStyle={mapContainerStyle}
                 zoom={12}
@@ -53,7 +53,7 @@ const GoogleMapAPI = ({ listings }) =>  {
                 onLoad={onMapLoad}
             >
             {listings?.map(listing => (
-                <Marker 
+                <Marker
                     key={listing.id}
                     position={{ lat: listing.latitude, lng: listing.longitude}}
                     //label={{color: 'white', fontWeight: '600', fontSize: '12px', text: `$${listing.price}` }}
