@@ -1,25 +1,34 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { format } from "date-fns";
+import { RiStarSFill as Star } from "react-icons/ri";
+import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 
 import "./ConfirmationPage.css";
 
 const ConfirmationPage = ({ }) => {
     const booking = useSelector(state => state.booking)
     const listing = useSelector(state => state.listings.currentListing)
-    const image = listing?.images[0].url;
+    const imagesArray = listing?.images;
     const city = listing?.city;
     const type = listing?.type;
     const title = listing?.title;
     const num_guests = listing?.num_guests;
-    const num_beds = listing?.num_beds;
-    const num_baths = listing?.num_baths;
+    const bed = listing?.num_beds;
+    const bath = listing?.num_baths;
     const rating = listing?.rating;
-    const price = listing?.price;
 
     const guest = booking?.num_guests;
     const startDate = format(booking?.check_in, "MMM dd, yyyy");
     const endDate = format(booking?.check_out, "MMM dd, yyyy");
+
+    const num_nights = differenceInCalendarDays(booking.check_out, booking.check_in);
+    let price = (listing?.price * num_nights);
+    const cleaning = 27;
+    const service = 19.93;
+    const taxes = ((price + cleaning + service) * 0.13).toLocaleString(undefined, { maximumFractionDigits: 2 });
+    const total = (price + cleaning + service + parseFloat(taxes)).toLocaleString(undefined, { maximumFractionDigits: 2 });
+    
 
     const handleClick = (e) => {
         e.preventDefault();
@@ -33,7 +42,7 @@ const ConfirmationPage = ({ }) => {
     return (
         <>
           <div className="confirm__booking-container">
-                <h1>Confirm and pay</h1>
+                <h1>Confirm on your trip</h1>
                 <div className="booking__details-container">
                     <div className="booking__details">
                         <div className="your__trip">
@@ -56,7 +65,7 @@ const ConfirmationPage = ({ }) => {
                             <button type="submit" onClick={handleClick}>Confirm and pay</button>
                         </div>
                     </div>
-                    {/* <div className="booking__total-container">
+                    <div className="booking__total-container">
                         <div className="booking__total">
                             <div className="booking__image-container">
                                 <div className="booking__image">
@@ -72,8 +81,6 @@ const ConfirmationPage = ({ }) => {
                                         <div>
                                             <span><Star className="booking__star" /></span>
                                             <span className="booking__rating">{`${listing?.rating}`}</span>
-                                            <span>・</span>
-                                            <span>{reviews?.length > 1 ? `(${reviews?.length} reviews)` : `(${reviews?.length} review)`}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -101,7 +108,7 @@ const ConfirmationPage = ({ }) => {
                                 </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>  
         </>
