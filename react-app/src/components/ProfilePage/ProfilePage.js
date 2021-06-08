@@ -7,7 +7,7 @@ function ProfilePage({dark}) {
 
     return (
         <>
-            Welcome to the Profile Page
+            Welcome to the Profile Page Again
         </>
     )
 }
