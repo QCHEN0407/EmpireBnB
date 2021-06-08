@@ -48,5 +48,6 @@ class Listing(db.Model):
             "created_at": self.created_at,
             "updated_at": self.updated_at,
             "images": [image.to_dict() for image in self.images],
-            "host": self.user.to_dict_simple()
+            "host": self.user.to_dict_simple(),
+            "reivews": [review.to_dict() for review in self.reviews]
     }
