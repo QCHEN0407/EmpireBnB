@@ -15,6 +15,7 @@ import NavBarWhite from "./components/SplashPage/NavBar/NavBarWhite";
 import SearchPage from "./components/SearchPage/SearchPage";
 import ListingDetail from "./components/ListingDetailPage/ListingDetail";
 import ScrollToTop from "./context/ScrollToTop";
+import ConfirmationPage from "./components/ConfirmationPage/ConfirmationPage";
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -51,7 +52,8 @@ function App() {
               <Footer />
             </Route>
 
-            <Route path="/bookings">
+            <Route path="/confirm_reservation">
+              <ConfirmationPage />
             </Route>
 
             <Route exact path="/search">

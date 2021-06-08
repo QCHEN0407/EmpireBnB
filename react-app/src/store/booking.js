@@ -83,7 +83,7 @@ export const cancelBooking = (bookingId) => async (dispatch) => {
 ////Reducer////
 const initialState = {};
 
-const bookingReducer = (state = initialState, action) => {
+const booking = (state = initialState, action) => {
     switch (action.type){
         case ADD_BOOKING:
             return action.booking;
@@ -96,8 +96,8 @@ const bookingReducer = (state = initialState, action) => {
             delete newState[action.bookingId]
             return newState;
         default:
-        return state;
+            return state;
     }
 };
 
-export default bookingReducer;
+export default booking;

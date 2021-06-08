@@ -45,7 +45,7 @@ const BookingForm = ({ listing, userId }) => {
 
         // only redirect to bookings if user is logged in
         if (sessionUser) {
-            history.push(`/bookings`);
+            history.push(`/confirm_reservation`);
         };
     };
 
