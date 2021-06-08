@@ -23,7 +23,9 @@ export const getReviews = (listingId) => async(dispatch) => {
     }
 }
 
-const reviewReducer = (state = initialState, action) => {
+const initialState = {};
+
+const reviewReducer = (state=initialState, action) => {
     switch(action.type){
         case LOAD_REVIEWS:
             return action.reviews;
