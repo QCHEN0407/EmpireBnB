@@ -23,7 +23,7 @@ const DropdownMenu = ({ dark, isLoaded }) => {
         sessionLinks = (
             <>
                 <li>
-                    <NavLink to={`/users/${sessionUser.id}`}>Profile</NavLink>
+                    <NavLink to={`/profile`} onClick={()=> {setShowMenu(false)}}>Profile</NavLink>
                 </li>
                 <li>
                     <NavLink to="/" onClick={onlogout}>Log Out</NavLink>

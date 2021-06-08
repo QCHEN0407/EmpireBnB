@@ -16,6 +16,7 @@ import SearchPage from "./components/SearchPage/SearchPage";
 import ListingDetail from "./components/ListingDetailPage/ListingDetail";
 import ScrollToTop from "./context/ScrollToTop";
 import ConfirmationPage from "./components/ConfirmationPage/ConfirmationPage";
+import ProfilePage from "./components/ProfilePage/ProfilePage"
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -53,15 +54,24 @@ function App() {
             </Route>
 
             <Route path="/confirm_reservation">
+              <NavBarWhite />
               <ConfirmationPage />
+              <Footer />
             </Route>
 
             <Route exact path="/search">
               <NavBarWhite />
               <SearchPage />
+              <Footer />
             </Route>
 
             <Route path="/search/:category">
+            </Route>
+
+            <Route path="/profile">
+              <NavBarWhite />
+              <ProfilePage />
+              <Footer />
             </Route>
 
             <Route path="/users/:id(\d+)">
