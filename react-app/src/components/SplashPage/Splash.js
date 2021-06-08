@@ -30,7 +30,7 @@ const SplashPage = () => {
     dispatch(getListings());
   }, [dispatch, setShowMenu]);
 
-  const image1 = listings?.[0].images[0].url;
+  const image1 = listings?.[5].images[0].url;
   const image2 = listings?.[1].images[0].url;
   const image3 = listings?.[2].images[0].url;
   const image4 = listings?.[3].images[0].url;
@@ -136,12 +136,12 @@ const SplashPage = () => {
       </div>
       <h1 className="tile__title">Become a NewYorker</h1>
       <div className='tile__container'>
-        <NavLink to={`/listings/${listings?.[0].id}`} style={{ textDecoration: "none" }}>
+        <NavLink to={`/listings/${listings?.[5].id}`} style={{ textDecoration: "none" }}>
           <Tile
             src={image1}
-            title={listings?.[0].title}
-            description={listings?.[0].description.substring(0,150) + "..."}
-            price={`$${listings?.[0].price} / night`}
+            title={listings?.[5].title}
+            description={listings?.[5].description.substring(0,150) + "..."}
+            price={`$${listings?.[5].price} / night`}
           />
         </NavLink>
         <NavLink to={`/listings/${listings?.[1].id}`} style={{ textDecoration: "none" }}>
