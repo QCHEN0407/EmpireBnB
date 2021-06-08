@@ -1,10 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { format } from "date-fns";
 
 import "./ConfirmationPage.css";
 
 const ConfirmationPage = ({ }) => {
-    
+    const booking = useSelector(state => state.booking)
     const listing = useSelector(state => state.listings.currentListing)
     const image = listing?.images[0].url;
     const city = listing?.city;
@@ -16,23 +17,29 @@ const ConfirmationPage = ({ }) => {
     const rating = listing?.rating;
     const price = listing?.price;
 
+    const guest = booking?.num_guests;
+    const startDate = format(booking?.check_in, "MMM dd, yyyy");
+    const endDate = format(booking?.check_out, "MMM dd, yyyy");
+
+    const handleClick = (e) => {
+        e.preventDefault();
+       
+        // const createdBooking = dispatch(createBooking(booking));
+        // if (createdBooking) {
+        //     history.push(`/users/${sessionUser.id}`);
+        // }
+    }
+
     return (
         <>
-          {/* <div className="confirm__booking-container">
-                
+          <div className="confirm__booking-container">
                 <h1>Confirm and pay</h1>
-                
                 <div className="booking__details-container">
                     <div className="booking__details">
-                        <div className="rare__find">
-                            <h2>This is a rare find.</h2>
-                            <p>{host?.firstName}'s place is usually booked.</p>
-                            <div className="rare__find-logo"><img src={RareFind} alt="" /></div>
-                        </div>
                         <div className="your__trip">
                             <h2>Your trip</h2>
                             <h3>Dates</h3>
-                            <p>{startDate}-{endDate}</p>
+                            <p>{startDate} - {endDate}</p>
                             <h3>Guests</h3>
                             <p>{guest > 1 ? `${guest} guests` : `${guest} guest`}</p>
                         </div>
@@ -49,7 +56,7 @@ const ConfirmationPage = ({ }) => {
                             <button type="submit" onClick={handleClick}>Confirm and pay</button>
                         </div>
                     </div>
-                    <div className="booking__total-container">
+                    {/* <div className="booking__total-container">
                         <div className="booking__total">
                             <div className="booking__image-container">
                                 <div className="booking__image">
@@ -94,9 +101,9 @@ const ConfirmationPage = ({ }) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-            </div>   */}
+            </div>  
         </>
     )
 }
