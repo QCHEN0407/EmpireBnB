@@ -34,13 +34,13 @@ export const createBooking = booking => async (dispatch) => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({booking})
+        body: JSON.stringify({ booking })
     })
     try {
         if (!res.ok) throw res
         const booking = await res.json();
         if (booking.errors) {
-            return ;
+            return;
         }
         dispatch(addBooking(booking))
         return booking;
@@ -49,11 +49,55 @@ export const createBooking = booking => async (dispatch) => {
     }
 }
 
-export const storeNewBooking = booking => async(dispatch) => {
+export const storeNewBooking = booking => async (dispatch) => {
     dispatch(storeBooking(booking))
     return booking;
 }
 
 export const getBookings = (userId) => async (dispatch) => {
-    const res = await fetch("/api/users/userId")
+    const res = await fetch(`/api/users/${userId}/bookings`)
+
+    try {
+        if (!res.ok) throw res
+        const bookings = await res.json()
+        dispatch(getBooking(bookings))
+    } catch (error) {
+        console.log(error)
+    }
 }
+
+export const cancelBooking = (bookingId) => async (dispatch) => {
+    const res = await fetch(`/api/bookings/${bookingId}`, {
+        method: "DELETE",
+    });
+    try {
+        if (!res.ok) throw res
+        const bookingId = await res.json();
+        dispatch(deleteBooking(bookingId))
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+////Reducer////
+const initialState = {};
+
+const bookingReducer = (state = initialState, action) => {
+    switch (action.type){
+        case ADD_BOOKING:
+            return action.booking;
+        case STORE_BOOKING:
+            return action.booking;
+        case GET_BOOKING:
+            return action.bookings;
+        case DELETE_BOOKING:
+            const newState = {...state}
+            delete newState[action.bookingId]
+            return newState;
+        default:
+        return state;
+    }
+};
+
+export default bookingReducer;

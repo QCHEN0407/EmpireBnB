@@ -16,13 +16,13 @@ import { FaFireExtinguisher as FireExt } from "react-icons/fa";
 import { format, parseISO } from "date-fns";
 import { getListingById } from "../../store/listing";
 // import { getReviews } from "../../store/review";
-// import BookingForm from "./BookingForm";
+import BookingForm from "./BookingForm";
 import useConsumeContext from "../../context/LoginSignupModalContext";
 import './ListingDetail.css';
 
 const ListingDetail = () => {
     const { id } = useParams();
-    const sessionUser = useSelector(state => state.session.user);
+    const user = useSelector(state => state.session.user);
     const listing = useSelector(state => state.listings.currentListing);
     // const reviews = useSelector(state => state.review);
     const { setShowMenu } = useConsumeContext();
@@ -33,7 +33,7 @@ const ListingDetail = () => {
     const bed = listing?.num_beds;
     const bath = listing?.num_baths;
     const guest = listing?.num_guests;
-    
+
     const img1 = listing?.images[0]?.url;
     const img2 = listing?.images[1]?.url;
     const img3 = listing?.images[2]?.url;
@@ -81,9 +81,9 @@ const ListingDetail = () => {
                         <img src={host?.avatar} alt="" />
                     </div>
                 </div>
-                {/* <div className="booking__container">
-                    <BookingForm listing={listing} userId={sessionUser?.id}/>
-                </div> */}
+                <div className="booking__container">
+                    <BookingForm listing={listing} userId={user?.id}/>
+                </div>
                 <div className="listing__more-info__container">
                     <div className="home__icon info__icon"><Home /></div>
                     <div className="home info__text">

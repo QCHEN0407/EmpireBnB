@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { enGB } from 'date-fns/locale';
 import { DateRangePicker, START_DATE, END_DATE } from 'react-nice-dates';
 import { RiStarSFill as Star } from "react-icons/ri";
-import LoginModal from "../LoginFormModal/LoginFormModal";
+import LoginFormModal from "../auth/LoginFormModal";
 import { storeNewBooking } from '../../store/booking';
 import 'react-nice-dates/build/style.css';
 import "./BookingForm.css";
-import "../LoginFormModal/LoginForm.css";
+import "../auth/LoginForm.css"
 
 const BookingForm = ({ listing, userId }) => {
     const [startDate, setStartDate] = useState();
@@ -99,7 +99,7 @@ const BookingForm = ({ listing, userId }) => {
                     required
                     onChange={(e) => setNumGuests(e.target.value)}
                 />
-                {sessionUser ? <button className="reserve__button" type="submit">Reserve</button> : <div className="reserve__button"><LoginModal /></div>}
+                {sessionUser ? <button className="reserve__button" type="submit">Reserve</button> : <div className="reserve__button"><LoginFormModal /></div>}
                 <div className="reserve__message">You won't be charged yet</div>
             </form>
         </div>
