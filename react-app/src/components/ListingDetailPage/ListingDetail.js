@@ -15,7 +15,7 @@ import { FiMonitor as TV } from "react-icons/fi";
 import { FaFireExtinguisher as FireExt } from "react-icons/fa";
 import { format, parseISO } from "date-fns";
 import { getListingById } from "../../store/listing";
-// import { getReviews } from "../../store/review";
+import { getReviews } from "../../store/review";
 import BookingForm from "./BookingForm";
 import useConsumeContext from "../../context/LoginSignupModalContext";
 import './ListingDetail.css';
@@ -24,7 +24,7 @@ const ListingDetail = () => {
     const { id } = useParams();
     const user = useSelector(state => state.session.user);
     const listing = useSelector(state => state.listings.currentListing);
-    // const reviews = useSelector(state => state.review);
+    const reviews = useSelector(state => state.listings.currentListing.reviews);
     const { setShowMenu } = useConsumeContext();
     const dispatch = useDispatch();
 
@@ -124,7 +124,7 @@ const ListingDetail = () => {
                     <div><TV className="amenities__icon"/><span>TV</span></div>
                     <div><FireExt className="amenities__icon"/><span>Fire Extinguisher</span></div>
                 </div>
-                {/* <div className="reviews__container">
+                <div className="reviews__container">
                     <div className="reviews__rating-info">
                         <span><Star className="review-rating__star" /></span>
                         <span className="reviews__listing-rating">{listing?.rating}</span>
@@ -134,9 +134,9 @@ const ListingDetail = () => {
                         {Array.from(reviews)?.map(review => (
                             <div className="user__review" key={review.id}>
                                 <div className="user__image-info">
-                                    <img src={review?.User.avatar} alt=""/>
+                                    <img src={review?.user.avatar} alt=""/>
                                     <div>
-                                        <h2>{review?.User.firstName}</h2>
+                                        <h2>{review?.user.firstName}</h2>
                                         <p>{format(parseISO(review?.createdAt), "MMMM yyyy")}</p>
                                     </div>
                                 </div>
@@ -146,7 +146,7 @@ const ListingDetail = () => {
                             </div>
                         ))}
                     </div>
-                </div> */}
+                </div>
             </Route>
         </div>
     )
