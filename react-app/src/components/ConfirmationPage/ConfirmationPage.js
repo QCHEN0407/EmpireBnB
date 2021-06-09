@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink, useHistory } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { format } from "date-fns";
+import {createBooking} from "../../store/booking";
 import { RiStarSFill as Star } from "react-icons/ri";
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
 import { IoIosArrowBack as BackButton } from "react-icons/io";
@@ -9,6 +10,11 @@ import { IoIosArrowBack as BackButton } from "react-icons/io";
 import "./ConfirmationPage.css";
 
 const ConfirmationPage = ({ }) => {
+
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const user = useSelector(state => state.session.user);
     const booking = useSelector(state => state.booking)
     const listing = useSelector(state => state.listings.currentListing)
     const imagesArray = listing?.images;
@@ -35,10 +41,10 @@ const ConfirmationPage = ({ }) => {
     const handleClick = (e) => {
         e.preventDefault();
 
-        // const createdBooking = dispatch(createBooking(booking));
-        // if (createdBooking) {
-        //     history.push(`/users/${sessionUser.id}`);
-        // }
+        const createdBooking = dispatch(createBooking(booking));
+        if (createdBooking) {
+            history.push(`/profile`);
+        }
     }
 
     return (
