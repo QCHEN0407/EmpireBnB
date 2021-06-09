@@ -34,7 +34,7 @@
     column-gap: 31px;
 }
 
-.rare__find {
+/* .rare__find {
     border-radius: 16px;
     border: 1px solid rgb(221, 221, 221);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
@@ -46,9 +46,9 @@
     flex-wrap: wrap;
     justify-items: center;
     line-height: 20px;
-}
+} */
 
-.rare__find > p {
+/* .rare__find > p {
     color: #717171;
 }
 
@@ -62,11 +62,13 @@
     justify-self: center;
     align-self: flex-end;
     padding-top: 5px;
-}
+} */
 
 .your__trip {
     padding: 24px 0px 6px;
+
     border-bottom: 1px solid lightgray;
+
 }
 
 .your__trip > h2 {
@@ -75,25 +77,25 @@
 }
 
 .your__trip p {
-    padding-bottom: 18px;
+    /* padding-bottom: 18px; */
     color: #717171;
 }
 
 .your__trip > h3 {
-    padding-bottom: 8px;
+    /* padding-bottom: 8px; */
 }
 
 .cancellation {
-    padding: 24px 0px;
+    padding: 13px 0px;
     border-bottom: 1px solid lightgray;
 }
 
 .cancellation > h2 {
     font-size: 22px;
-    padding-bottom: 24px;
+    padding-bottom: 10px;
 }
 
-.cancellation > p {
+.cancellation p {
     color: #717171;
     line-height: 20px;
 }
@@ -218,7 +220,7 @@
 
 .price__details-title {
     font-size: 22px;
-    padding: 24px 0px;
+    /* padding: 24px 0px; */
 }
 
 .price__details {
