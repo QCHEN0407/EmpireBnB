@@ -17,6 +17,7 @@ import ListingDetail from "./components/ListingDetailPage/ListingDetail";
 import ScrollToTop from "./context/ScrollToTop";
 import ConfirmationPage from "./components/ConfirmationPage/ConfirmationPage";
 import ProfilePage from "./components/ProfilePage/ProfilePage"
+import './reset.css';
 
 function App() {
   const user = useSelector(state => state.session.user)
