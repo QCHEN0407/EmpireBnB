@@ -1,8 +1,10 @@
 import React from "react";
+import { NavLink, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { format } from "date-fns";
 import { RiStarSFill as Star } from "react-icons/ri";
 import differenceInCalendarDays from 'date-fns/differenceInCalendarDays';
+import { IoIosArrowBack as BackButton } from "react-icons/io";
 
 import "./ConfirmationPage.css";
 
@@ -28,11 +30,11 @@ const ConfirmationPage = ({ }) => {
     const service = 19.93;
     const taxes = ((price + cleaning + service) * 0.13).toLocaleString(undefined, { maximumFractionDigits: 2 });
     const total = (price + cleaning + service + parseFloat(taxes)).toLocaleString(undefined, { maximumFractionDigits: 2 });
-    
+
 
     const handleClick = (e) => {
         e.preventDefault();
-       
+
         // const createdBooking = dispatch(createBooking(booking));
         // if (createdBooking) {
         //     history.push(`/users/${sessionUser.id}`);
@@ -42,7 +44,12 @@ const ConfirmationPage = ({ }) => {
     return (
         <>
           <div className="confirm__booking-container">
-                <h1>Confirm on your trip</h1>
+                <div className="back__button">
+                    <NavLink to={`/listings/${listing?.id}`}>
+                        <div id="back__button"><BackButton /></div>
+                    </NavLink>
+                    <h1>Confirm and pay</h1>
+                </div>
                 <div className="booking__details-container">
                     <div className="booking__details">
                         <div className="your__trip">
@@ -110,7 +117,7 @@ const ConfirmationPage = ({ }) => {
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </>
     )
 }
