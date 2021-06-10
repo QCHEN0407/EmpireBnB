@@ -8,8 +8,7 @@ import reviews from "./review";
 const rootReducer = combineReducers({
     session,
     listings,
-    booking,
-    reviews
+    booking
 });
 
 

@@ -24,7 +24,6 @@ const ListingDetail = () => {
     const { id } = useParams();
     const user = useSelector(state => state.session.user);
     const listing = useSelector(state => state.listings.currentListing);
-    const reviews = useSelector(state => state.listings.currentListing.reviews);
     const { setShowMenu } = useConsumeContext();
     const dispatch = useDispatch();
 
@@ -44,7 +43,6 @@ const ListingDetail = () => {
     useEffect(() => {
         setShowMenu(false);
         dispatch(getListingById(Number(id)));
-        // dispatch(getReviews(Number(id)));
     }, [dispatch, id, setShowMenu])
 
     return (
@@ -125,19 +123,21 @@ const ListingDetail = () => {
                     <div><FireExt className="amenities__icon"/><span>Fire Extinguisher</span></div>
                 </div>
                 <div className="reviews__container">
+
                     <div className="reviews__rating-info">
                         <span><Star className="review-rating__star" /></span>
                         <span className="reviews__listing-rating">{listing?.rating}</span>
-                        <span>{reviews?.length > 1 ? `(${reviews?.length} reviews)` : `(${reviews?.length} review)`}</span>
+                        <span>{listing?.reviews?.length > 1 ? `(${listing?.reviews?.length} reviews)` : `(${listing?.reviews?.length} review)`}</span>
                     </div>
                     <div className="user__review-container">
-                        {Array.from(reviews)?.map(review => (
+                        {listing?.reviews?.map(review => (
                             <div className="user__review" key={review.id}>
                                 <div className="user__image-info">
                                     <img src={review?.user.avatar} alt=""/>
                                     <div>
                                         <h2>{review?.user.firstName}</h2>
-                                        <p>{format(parseISO(review?.createdAt), "MMMM yyyy")}</p>
+                                        <p>{review?.created_at}</p>
+                                        {/* <p>{format(parseISO(review?.created_at), "MMM dd, yyyy")}</p> */}
                                     </div>
                                 </div>
                                 <div className="user__review-text">
