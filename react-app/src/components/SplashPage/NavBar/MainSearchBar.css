@@ -47,3 +47,47 @@
 .navbar__search__input:hover {
     background-color: #E37F0E;
 }
+
+.date-range {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.date-range-mainsearch {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px;
+}
+
+.nice-dates {
+    width: 50%
+}
+
+.navbar__search__input__nice_date {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    width: 50%;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.navbar__search__input__nice_date:hover {
+    background-color: #E37F0E;
+}
+
+
+
+.navbar__search__main .nice-dates-popover {
+  box-shadow: none;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  position: absolute;
+  /* background-color: lightpink; */
+}
+

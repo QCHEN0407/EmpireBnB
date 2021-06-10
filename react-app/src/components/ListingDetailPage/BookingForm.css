@@ -116,16 +116,17 @@ input::placeholder {
   color: #111;
 }
 
-.nice-dates-popover {
+.date__picker .nice-dates-popover {
   box-shadow: none;
   border: 1px solid #ddd;
   border-radius: 20px;
   max-width: 480px;
   position: absolute;
   right: -1px;
+  
 }
 
 /* COLOR of the selection */
 .nice-dates-day:before {
-    background-color: #428CD2;
+    background-color: #E37F0E;
 }
