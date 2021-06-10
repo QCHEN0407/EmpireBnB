@@ -111,8 +111,8 @@ const SignUpForm = () => {
           <button style={{ cursor: 'pointer' }} type="submit">Sign Up</button>
         </div>
         <div className="goto__login">
-          <p>Already have an account? </p>
-          <h3 onClick={handleLoginModal} style={{ cursor: 'pointer' }}>Log in instead</h3>
+          <p>Already have an account? <span onClick={handleLoginModal} style={{ cursor: 'pointer' }}>Log in instead.</span></p>
+
         </div>
       </form>
     </div>

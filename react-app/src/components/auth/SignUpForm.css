@@ -69,11 +69,13 @@ input::placeholder {
 
 .signup__header h1 {
     font-size: 22px;
+    padding: 10px 0px 20px 0px;
 }
 
 .goto__login {
     font-size: 14px;
     cursor: pointer;
+    padding: 20px 0px 0px 0px;
 }
 
 
@@ -84,4 +86,13 @@ input::placeholder {
 
 .fullname__input .signup__input {
     width: 48%;
+}
+
+.goto__login span {
+    color: #1264a3;
+    font-weight: 500;
+}
+
+.goto__login span:hover {
+    text-decoration: underline;
 }

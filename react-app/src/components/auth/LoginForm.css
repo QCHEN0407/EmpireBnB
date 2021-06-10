@@ -17,6 +17,7 @@
 
 .login__header h1{
     font-size: 22px;
+    padding: 10px 0px 20px 0px;
 }
 
 .login__input input {
@@ -61,7 +62,7 @@ input::placeholder {
     font-size: 14px;
     color: #222222;
     font-weight: bold;
-    padding-left: 5px;
+    padding: 20px 0px 0px 0px;
 }
 
 /* .goto__signup:hover {
