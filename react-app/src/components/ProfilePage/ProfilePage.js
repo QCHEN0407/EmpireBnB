@@ -80,7 +80,19 @@ function ProfilePage({}) {
                     {upcoming_trips?.bookings.length > 0 ? <h2>Upcoming trips</h2> : <h2>No upcoming trips</h2>}
                     {upcoming_trips?.bookings.map(booking => <li>{booking.id}</li>)}
                     {past_trips?.bookings.length > 0 ? <h2>Past trips</h2> : <h2>No upcoming trips</h2>}
-                    {past_trips?.bookings.map(booking => <li>{booking.id}</li>)}
+                        <div className="pastTrip_container">
+
+
+                            {past_trips?.bookings.map(booking =>
+                                <div className="trip_card">
+                                    <img src={booking.listing.images[0].url} alt="Avatar"></img>
+                                    <div className="container">
+                                        <h4><b>John Doe</b></h4>
+                                        <p>Architect & Engineer</p>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                 </div>
             </div>
         </div>

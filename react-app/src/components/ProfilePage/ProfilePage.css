@@ -1,13 +1,13 @@
 .profile__container {
-    margin: 48px 200px;
+    margin: 48px 100px;
     display: grid;
-    grid-template-columns: 0.55fr 1.1fr;
+    grid-template-columns: 0.80fr 1.1fr;
     column-gap: 70px;
 }
 
 .profile__info-container {
     border-radius: 16px;
-    padding: 30px;
+    padding: 50px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
     border: 1px solid rgb(221, 221, 221);
     height: 510px;
@@ -131,7 +131,7 @@
     line-height: 30px;
 }
 
-.user__profile-info-container > div, 
+.user__profile-info-container > div,
 .user__profile-info-container > div > p {
     font-weight: normal;
     margin-bottom: 0px;
@@ -158,4 +158,25 @@
     font-size: 14px;
     font-weight: bold;
     text-decoration: underline;
+}
+.pastTrip_container{
+    display:flex;
+    padding: 50px 0px;
+
+}
+.trip_card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  height:300px;
+  width:300px;
+  border-radius: 20px; /* 5px rounded corners */
+  margin-right:32px;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+img {
+  border-radius: 20px 20px 0 0;
+  height: 180px;
+  width:300px;
+  object-fit: cover;
 }
