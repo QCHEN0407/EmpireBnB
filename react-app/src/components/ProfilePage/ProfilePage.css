@@ -165,9 +165,11 @@
 
 }
 .trip_card {
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  height:330px;
+  height:270px;
   width:330px;
   border-radius: 20px; /* 5px rounded corners */
   margin-right:32px;

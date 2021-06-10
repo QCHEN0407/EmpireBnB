@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { format, parseISO } from "date-fns";
 import { MdHome as Home } from "react-icons/md";
 import { AiFillMessage as Speaks } from "react-icons/ai";
 import { RiShieldCheckLine as Verified } from "react-icons/ri";
 import { FaRegStar as StarOutline } from "react-icons/fa";
 import { FaCheck as Check } from "react-icons/fa";
+import { parseISO, format, differenceInCalendarDays } from "date-fns";
 
 import { getUpComingTripsByUserId } from "../../store/booking";
 import { getPastTripsByUserId } from "../../store/booking";
@@ -28,6 +28,10 @@ function ProfilePage({}) {
         dispatch(getPastTripsByUserId(sessionUser?.id));
 
     }, [dispatch])
+
+    const parseDateString = (str) => {
+        return format(Date.parse(str), "MMM dd, yyyy")
+    }
 
     return (
         <div className="profile__container">
@@ -83,8 +87,8 @@ function ProfilePage({}) {
                                 <div className="trip_card">
                                     <img src={booking.listing.images[0].url} alt="Avatar"></img>
                                     <div className="tripInfo_container">
-                                        <h4><b>John Doe</b></h4>
-                                        <p>Architect & Engineer</p>
+                                        <h4><b>{`${parseDateString(booking.check_in)} - ${parseDateString(booking.check_out)}`}</b></h4>
+                                        <p>{`$${booking.total_cost}`}</p>
                                     </div>
                                     <div className="button_area">
                                         <h4>Cancel Trip</h4>
@@ -98,8 +102,8 @@ function ProfilePage({}) {
                                 <div className="trip_card">
                                     <img src={booking.listing.images[0].url} alt="Avatar"></img>
                                     <div className="tripInfo_container">
-                                        <h4><b>John Doe</b></h4>
-                                        <p>Architect & Engineer</p>
+                                        <h4><b>{`${parseDateString(booking.check_in)} - ${parseDateString(booking.check_out)}`}</b></h4>
+                                        <p>{`$${booking.total_cost}`}</p>
                                     </div>
                                     <div className="button_area">
                                         <h4>Add Review</h4>
