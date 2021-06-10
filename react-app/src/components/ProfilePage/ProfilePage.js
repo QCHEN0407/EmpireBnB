@@ -78,7 +78,7 @@ function ProfilePage({}) {
                 </div>
                 <div className="all__bookings-container">
                     {upcoming_trips?.bookings.length > 0 ? <h2>Upcoming trips</h2> : <h2>No upcoming trips</h2>}
-                    <div className="upcomingTrip_container">
+                    <div className="trip_container">
                             {upcoming_trips?.bookings.map(booking =>
                                 <div className="trip_card">
                                     <img src={booking.listing.images[0].url} alt="Avatar"></img>
@@ -93,7 +93,7 @@ function ProfilePage({}) {
                             )}
                         </div>
                     {past_trips?.bookings.length > 0 ? <h2>Past trips</h2> : <h2>No upcoming trips</h2>}
-                        <div className="pastTrip_container">
+                        <div className="trip_container">
                             {past_trips?.bookings.map(booking =>
                                 <div className="trip_card">
                                     <img src={booking.listing.images[0].url} alt="Avatar"></img>
