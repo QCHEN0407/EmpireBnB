@@ -36,6 +36,8 @@ function ProfilePage({}) {
 
     const cancelTrip = (booking_id) => {
         dispatch(cancelBooking(sessionUser?.id, booking_id));
+        //dispatch(getUpComingTripsByUserId(sessionUser?.id));
+        console.log("trip cancelled")
     }
 
     return (

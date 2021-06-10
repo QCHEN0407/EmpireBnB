@@ -86,7 +86,7 @@ export const cancelBooking = (userId, bookingId) => async (dispatch) => {
         if (!res.ok) throw res
         const bookingId = await res.json();
         // dispatch(deleteBooking(bookingId))
-        getUpComingTripsByUserId(userId)
+        dispatch(getUpComingTripsByUserId(userId));
 
     } catch (error) {
         console.log(error)
