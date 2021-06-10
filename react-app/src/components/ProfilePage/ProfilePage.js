@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { format, parseISO } from "date-fns";
 import { MdHome as Home } from "react-icons/md";
@@ -8,13 +7,27 @@ import { RiShieldCheckLine as Verified } from "react-icons/ri";
 import { FaRegStar as StarOutline } from "react-icons/fa";
 import { FaCheck as Check } from "react-icons/fa";
 
+import { getUpComingTripsByUserId } from "../../store/booking";
+import { getPastTripsByUserId } from "../../store/booking";
+
 import "./ProfilePage.css";
 
 
-function ProfilePage({dark}) {
+function ProfilePage({}) {
 
-
+    const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
+    const upcoming_trips = useSelector(state => state.booking.upcoming);
+    const past_trips = useSelector(state => state.booking.past);
+
+    useEffect(() => {
+        // setShowMenu(false);
+        //console.log(sessionUser?.id);
+        //dispatch(getListingById(Number(id)));
+        dispatch(getUpComingTripsByUserId(sessionUser?.id));
+        dispatch(getPastTripsByUserId(sessionUser?.id));
+
+    }, [dispatch])
 
     return (
         <div className="profile__container">

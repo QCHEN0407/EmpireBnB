@@ -1,5 +1,6 @@
 from flask import Blueprint, jsonify, request
 from app.models import Booking, User, db
+from datetime import datetime
 
 booking_routes = Blueprint('bookings', __name__)
 
@@ -16,13 +17,23 @@ def create_booking():
     )
     db.session.add(new_booking)
     db.session.commit()
-    # print(request.get_json())
     return request.get_json()
 
-@booking_routes.route('/<int:user_id>/bookings')
-def get_bookings_by_user(user_id):
+@booking_routes.route('/<int:user_id>/upcoming')
+def get_bookings_by_user_upcoming(user_id):
+    now = datetime.now()
+    bookings = Booking.query.filter(Booking.user_id == user_id, Booking.check_in > now)
     
-    return "dummy booking"
+    return {"bookings": [booking.to_dict() for booking in bookings]}
+
+
+@booking_routes.route('/<int:user_id>/past')
+def get_bookings_by_user_past(user_id):
+    now = datetime.now()
+    bookings = Booking.query.filter(Booking.user_id == user_id, Booking.check_in < now)
+    
+    return {"bookings": [booking.to_dict() for booking in bookings]}
+
 
 
 

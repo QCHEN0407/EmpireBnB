@@ -33,6 +33,6 @@ class Booking(db.Model):
             "total_cost": self.total_cost,
             "created_at": self.created_at,
             "updated_at": self.updated_at,
-            "user": self.user,
-            "listing": self.listing
+            # "user": self.user.to_dict_simple(),
+            "listing": self.listing.to_dict()
         }

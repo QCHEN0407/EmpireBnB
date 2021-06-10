@@ -3,6 +3,8 @@ const ADD_BOOKING = "booking/ADD_BOOKING";
 const STORE_BOOKING = "booking/STORE_BOOKING";
 const GET_BOOKING = "booking/GET_BOOKING";
 const DELETE_BOOKING = "booking/DELETE_BOOKING";
+const GET_UPCOMING_TRIPS = "booking/GET_UPCOMING_TRIPS";
+const GET_PAST_TRIPS = "booking/GET_PAST_TRIPS";
 
 ////ACTION CREATORS////
 
@@ -26,6 +28,16 @@ const deleteBooking = (bookingId) => ({
     bookingId
 });
 
+const getUpcomingTrips = (bookings) => ({
+    type: GET_UPCOMING_TRIPS,
+    bookings
+})
+
+const getPastTrips = (bookings) => ({
+    type: GET_PAST_TRIPS,
+    bookings
+})
+
 ///Thunk Action Creators///
 
 export const createBooking = booking => async (dispatch) => {
@@ -42,7 +54,7 @@ export const createBooking = booking => async (dispatch) => {
         if (booking.errors) {
             return;
         }
-        dispatch(addBooking(booking))
+        // dispatch(addBooking(booking))
         return booking;
     } catch (error) {
         console.log(error)
@@ -80,13 +92,37 @@ export const cancelBooking = (bookingId) => async (dispatch) => {
     }
 }
 
+export const getUpComingTripsByUserId = (userId) => async (dispatch) => {
+    const res = await fetch(`/api/bookings/${userId}/upcoming`)
+    try {
+        if (!res.ok) throw res
+        const bookings = await res.json()
+        dispatch(getUpcomingTrips(bookings))
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const getPastTripsByUserId = (userId) => async (dispatch) => {
+    const res = await fetch(`/api/bookings/${userId}/past`)
+
+    try {
+        if (!res.ok) throw res
+        const bookings = await res.json()
+        dispatch(getPastTrips(bookings))
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
 ////Reducer////
 const initialState = {};
 
 const booking = (state = initialState, action) => {
     switch (action.type){
         case ADD_BOOKING:
-            return action.booking;
+            return action.booking.booking;
         case STORE_BOOKING:
             return action.booking;
         case GET_BOOKING:
@@ -95,6 +131,10 @@ const booking = (state = initialState, action) => {
             const newState = {...state}
             delete newState[action.bookingId]
             return newState;
+        case GET_UPCOMING_TRIPS:
+            return {...state, upcoming_trips:action.bookings}
+        case GET_PAST_TRIPS:
+            return {...state, past_trips:action.bookings}
         default:
             return state;
     }
