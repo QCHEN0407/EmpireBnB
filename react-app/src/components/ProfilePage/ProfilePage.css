@@ -174,7 +174,7 @@
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */
-img {
+.trip_card img {
   border-radius: 20px 20px 0 0;
   height: 180px;
   width:330px;
