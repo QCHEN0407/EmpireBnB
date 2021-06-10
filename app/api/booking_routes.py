@@ -34,7 +34,12 @@ def get_bookings_by_user_past(user_id):
     
     return {"bookings": [booking.to_dict() for booking in bookings]}
 
-
+@booking_routes.route('/<int:booking_id>', methods=['DELETE'])
+def delete_booking_by_id(booking_id):
+    deleted_booking = Booking.query.get(booking_id)
+    db.session.delete(deleted_booking)
+    db.session.commit()
+    return str(booking_id)
 
 
 # check_in: Sat Jun 12 2021 00:00:00 GMT-0400 (Eastern Daylight Time) {}

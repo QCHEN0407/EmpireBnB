@@ -9,6 +9,7 @@ import { parseISO, format, differenceInCalendarDays } from "date-fns";
 
 import { getUpComingTripsByUserId } from "../../store/booking";
 import { getPastTripsByUserId } from "../../store/booking";
+import { cancelBooking } from "../../store/booking";
 
 import "./ProfilePage.css";
 
@@ -31,6 +32,10 @@ function ProfilePage({}) {
 
     const parseDateString = (str) => {
         return format(Date.parse(str), "MMM dd, yyyy")
+    }
+
+    const cancelTrip = (booking_id) => {
+        dispatch(cancelBooking(sessionUser?.id, booking_id));
     }
 
     return (
@@ -90,7 +95,7 @@ function ProfilePage({}) {
                                         <h4><b>{`${parseDateString(booking.check_in)} - ${parseDateString(booking.check_out)}`}</b></h4>
                                         <p>{`$${booking.total_cost}`}</p>
                                     </div>
-                                    <div className="button_area">
+                                    <div className="button_area" onClick={()=>cancelTrip(booking.id)}>
                                         <h4>Cancel Trip</h4>
                                     </div>
                                 </div>

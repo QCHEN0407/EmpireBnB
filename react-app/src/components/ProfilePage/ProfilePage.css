@@ -1,7 +1,7 @@
 .profile__container {
     margin: 48px 100px;
     display: grid;
-    grid-template-columns: 0.80fr 1.1fr;
+    grid-template-columns: 0.30fr 1.1fr;
     column-gap: 70px;
 }
 
@@ -162,7 +162,7 @@
 .trip_container{
     display:flex;
     padding: 50px 0px;
-
+    flex-wrap: wrap;
 }
 .trip_card {
   display: flex;
@@ -173,6 +173,7 @@
   width:330px;
   border-radius: 20px; /* 5px rounded corners */
   margin-right:32px;
+  margin-bottom: 32px;
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */
@@ -190,4 +191,11 @@
 .button_area{
     text-align: center;
     padding: 15px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius:20px;
+}
+
+.button_area:hover {
+    background-color: lightsalmon;
+    cursor: pointer;
 }

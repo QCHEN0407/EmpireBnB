@@ -78,14 +78,15 @@ export const getBookings = (userId) => async (dispatch) => {
     }
 }
 
-export const cancelBooking = (bookingId) => async (dispatch) => {
+export const cancelBooking = (userId, bookingId) => async (dispatch) => {
     const res = await fetch(`/api/bookings/${bookingId}`, {
         method: "DELETE",
     });
     try {
         if (!res.ok) throw res
         const bookingId = await res.json();
-        dispatch(deleteBooking(bookingId))
+        // dispatch(deleteBooking(bookingId))
+        getUpComingTripsByUserId(userId)
 
     } catch (error) {
         console.log(error)
