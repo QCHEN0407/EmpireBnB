@@ -86,9 +86,12 @@ function ProfilePage({}) {
                             {past_trips?.bookings.map(booking =>
                                 <div className="trip_card">
                                     <img src={booking.listing.images[0].url} alt="Avatar"></img>
-                                    <div className="container">
+                                    <div className="tripInfo_container">
                                         <h4><b>John Doe</b></h4>
                                         <p>Architect & Engineer</p>
+                                    </div>
+                                    <div className="button_area">
+                                        <h4>Add Review</h4>
                                     </div>
                                 </div>
                             )}
