@@ -55,7 +55,7 @@ export const storeNewBooking = booking => async (dispatch) => {
 }
 
 export const getBookings = (userId) => async (dispatch) => {
-    const res = await fetch(`/api/users/${userId}/bookings`)
+    const res = await fetch(`/api/bookings/${userId}/bookings`)
 
     try {
         if (!res.ok) throw res

@@ -37,7 +37,8 @@ const ConfirmationPage = ({ }) => {
     const taxes = ((price + cleaning + service) * 0.13).toLocaleString(undefined, { maximumFractionDigits: 2 });
     const total = (price + cleaning + service + parseFloat(taxes)).toLocaleString(undefined, { maximumFractionDigits: 2 });
 
-
+    booking.total_cost = parseFloat(total.split(",").join(""));
+    
     const handleClick = (e) => {
         e.preventDefault();
 
