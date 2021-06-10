@@ -17,8 +17,8 @@ function ProfilePage({}) {
 
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const upcoming_trips = useSelector(state => state.booking.upcoming);
-    const past_trips = useSelector(state => state.booking.past);
+    const upcoming_trips = useSelector(state => state.booking.upcoming_trips);
+    const past_trips = useSelector(state => state.booking.past_trips);
 
     useEffect(() => {
         // setShowMenu(false);
@@ -76,10 +76,12 @@ function ProfilePage({}) {
                         <p>Speaks English</p>
                     </div>
                 </div>
-                {/* <div className="all__bookings-container">
-                    {bookings?.length > 0 ? <h2>Upcoming trips</h2> : <h2>No upcoming trips</h2>}
-                    {Array.from(bookings)?.map(booking => <BookingResult booking={booking} key={booking.id}/>)}
-                </div> */}
+                <div className="all__bookings-container">
+                    {upcoming_trips?.bookings.length > 0 ? <h2>Upcoming trips</h2> : <h2>No upcoming trips</h2>}
+                    {upcoming_trips?.bookings.map(booking => <li>{booking.id}</li>)}
+                    {past_trips?.bookings.length > 0 ? <h2>Past trips</h2> : <h2>No upcoming trips</h2>}
+                    {past_trips?.bookings.map(booking => <li>{booking.id}</li>)}
+                </div>
             </div>
         </div>
     )
