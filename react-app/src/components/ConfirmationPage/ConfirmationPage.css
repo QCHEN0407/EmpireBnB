@@ -65,7 +65,7 @@
 } */
 
 .your__trip {
-    padding: 24px 0px 6px;
+    padding: 20px 0px 6px;
 
     border-bottom: 1px solid lightgray;
 
@@ -77,16 +77,16 @@
 }
 
 .your__trip p {
-    /* padding-bottom: 18px; */
+    padding-bottom: 18px;
     color: #717171;
 }
 
 .your__trip > h3 {
-    /* padding-bottom: 8px; */
+    padding-bottom: 8px;
 }
 
 .cancellation {
-    padding: 13px 0px;
+    padding: 24px 0px;
     border-bottom: 1px solid lightgray;
 }
 
@@ -124,7 +124,7 @@
 .confirm__pay-button > button {
     height: 48px;
     width: 200px;
-    background-color: #FF385C;
+    background-color: #f48c54;
     color: white;
     border-radius: 8px;
     border: none;
@@ -194,7 +194,7 @@
     font-size: 16px;
     padding-top: 4px;
     padding-right: 2px;
-    color: #FF385C;
+    color: #f48c54;
 }
 
 .booking__listing-details div {
