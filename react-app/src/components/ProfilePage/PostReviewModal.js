@@ -45,11 +45,10 @@ const PostReviewModal = ({ listing_id }) => {
                             <div className="review_textarea">
                                 <h2>Write a public review</h2>
                                 <p>Tell future travelers about what they can expect at this place.</p>
-                                <textarea id="text_area" rows="10" cols="50"></textarea>
                             </div>
                             <textarea id="text_area" rows="10" cols="50" onChange={(e)=>{setReviewText(e.target.value)}}></textarea>
                             <div className="review_button">
-                                <button> Done </button>
+                                <button type="submit"> Done </button>
                             </div>
 
                         </div>
