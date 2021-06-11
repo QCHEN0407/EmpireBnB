@@ -6,6 +6,7 @@ export const LoginSignupModalProvider = (props) => {
     const [showLogin, setShowLogin] = useState(false);
     const [showSignUp, setShowSignUp] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
+    const [showReview, setShowReview] = useState(false);
 
     const handleSignupModal = () => {
         setShowLogin(false);
@@ -17,8 +18,12 @@ export const LoginSignupModalProvider = (props) => {
         setShowSignUp(false);
     };
 
+    const handleReviewModal = () => {
+        setShowReview(prev_state => !prev_state);
+    }
+
     return (
-        <context.Provider value={{showLogin, showSignUp, showMenu, setShowMenu, setShowLogin, setShowSignUp, handleSignupModal, handleLoginModal}}>
+        <context.Provider value={{showLogin, showSignUp, showMenu, setShowMenu, setShowLogin, setShowSignUp, handleSignupModal, handleLoginModal, showReview, setShowReview, handleReviewModal}}>
             {props.children}
         </context.Provider>
     )

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MdHome as Home } from "react-icons/md";
 import { AiFillMessage as Speaks } from "react-icons/ai";
@@ -6,10 +6,12 @@ import { RiShieldCheckLine as Verified } from "react-icons/ri";
 import { FaRegStar as StarOutline } from "react-icons/fa";
 import { FaCheck as Check } from "react-icons/fa";
 import { parseISO, format, differenceInCalendarDays } from "date-fns";
+import useConsumeContext from "../../context/LoginSignupModalContext";
 
 import { getUpComingTripsByUserId } from "../../store/booking";
 import { getPastTripsByUserId } from "../../store/booking";
 import { cancelBooking } from "../../store/booking";
+import PostReviewModal from "./PostReviewModal";
 
 import "./ProfilePage.css";
 
@@ -20,6 +22,10 @@ function ProfilePage({}) {
     const sessionUser = useSelector(state => state.session.user);
     const upcoming_trips = useSelector(state => state.booking.upcoming_trips);
     const past_trips = useSelector(state => state.booking.past_trips);
+
+    const { handleReviewModal, showReview} = useConsumeContext();
+
+    const [listingToReview, setListingToReview] = useState("");
 
     useEffect(() => {
         // setShowMenu(false);
@@ -38,6 +44,11 @@ function ProfilePage({}) {
         dispatch(cancelBooking(sessionUser?.id, booking_id));
         //dispatch(getUpComingTripsByUserId(sessionUser?.id));
         console.log("trip cancelled")
+    }
+
+    const handleReviewClick = (listing_id) => {
+        setListingToReview(listing_id)
+        handleReviewModal();
     }
 
     return (
@@ -112,13 +123,16 @@ function ProfilePage({}) {
                                         <h4><b>{`${parseDateString(booking.check_in)} - ${parseDateString(booking.check_out)}`}</b></h4>
                                         <p>{`$${booking.total_cost}`}</p>
                                     </div>
-                                    <div className="button_area">
+                                    <div className="button_area" onClick={()=>{handleReviewClick(booking.listing.id)}}>
                                         <h4>Add Review</h4>
                                     </div>
                                 </div>
                             )}
                         </div>
                 </div>
+            </div>
+            <div>
+                <PostReviewModal listing_id={listingToReview}/>
             </div>
         </div>
     )

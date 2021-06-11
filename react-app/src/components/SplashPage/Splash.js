@@ -40,56 +40,56 @@ const SplashPage = () => {
       <Banner />
       <h1 className="tile__title">Explore Nearby</h1>
       <div className='city__container'>
-        <NavLink to={`/search/mercer_island`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/Montauk`} style={{ textDecoration: "none", color: "inherit" }}>
           <City
             src={Montauk}
             title="Montauk"
             description="3 hour drive"
             />
         </NavLink>
-        <NavLink to={`/search/north_seattle`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/Woodstock`} style={{ textDecoration: "none", color: "inherit" }}>
           <City
             src={Woodstock}
             title="Woodstock"
             description="2.5 hour drive"
           />
         </NavLink>
-        <NavLink to={`/search/downtown`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/Atlantic_City`} style={{ textDecoration: "none", color: "inherit" }}>
           <City
             src={AtlanticCity}
             title="Atlantic City"
             description="2.5 hour drive"
             />
         </NavLink>
-        <NavLink to={`/search/bellevue`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/Lake_George_Village`} style={{ textDecoration: "none", color: "inherit" }}>
           <City
             src={LakeGeorgevillage}
             title="Lake George Village"
             description="4.5 hour drive"
             />
         </NavLink>
-        <NavLink to={`/search/uptown`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/Newport`} style={{ textDecoration: "none", color: "inherit" }}>
           <City
             src={Newport}
             title="Newport"
             description="4.5 hour drive"
             />
         </NavLink>
-        <NavLink to={`/search/greenlake`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/Hudson`} style={{ textDecoration: "none", color: "inherit" }}>
           <City
             src={Hudson}
             title="Hudson"
             description="3 hour drive"
             />
         </NavLink>
-        <NavLink to={`/search/slu`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/OceanCity`} style={{ textDecoration: "none", color: "inherit" }}>
           <City
             src={OceanCity}
             title="Ocean City"
             description="3 hour drive"
             />
         </NavLink>
-        <NavLink to={`/search/belltown`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/CapeMay`} style={{ textDecoration: "none", color: "inherit" }}>
           <City
             src={CapeMay}
             title="Cape May"
