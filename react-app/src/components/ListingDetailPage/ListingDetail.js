@@ -136,8 +136,9 @@ const ListingDetail = () => {
                                     <img src={review?.user.avatar} alt=""/>
                                     <div>
                                         <h2>{review?.user.firstName}</h2>
-                                        <p>{review?.created_at}</p>
-                                        {/* <p>{format(parseISO(review?.created_at), "MMM dd, yyyy")}</p> */}
+                                        {/* <p>{review?.created_at}</p> */}
+                                        <p>{format(Date.parse(review?.created_at), "MMM dd, yyyy")}</p>
+                                        {/* format(Date.parse(str), "MMM dd, yyyy") */}
                                     </div>
                                 </div>
                                 <div className="user__review-text">
