@@ -14,6 +14,7 @@ const PostReviewModal = ({listing_id}) => {
     const history = useHistory();
 
     const submitReview = () => {
+        handleReviewModal();
         dispatch(addSingleReview(sessionUser?.id, listing_id, reviewText));
         history.push(`/listings/${listing_id}`);
     }
