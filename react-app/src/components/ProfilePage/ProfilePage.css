@@ -1,5 +1,5 @@
 .profile__container {
-    margin: 48px 100px;
+    margin: 48px 200px;
     display: grid;
     grid-template-columns: 0.30fr 1.1fr;
     column-gap: 70px;
@@ -13,6 +13,7 @@
     height: 510px;
     position: sticky;
     top: 120px;
+    /* background-color: black; */
 }
 
 .profile__info-container * {
@@ -179,14 +180,15 @@
 /* Add rounded corners to the top left and the top right corner of the image */
 .trip_card img {
   border-radius: 20px 20px 0 0;
-  height: 180px;
+  height: 150px;
   width:330px;
   object-fit: cover;
 }
 
 .tripInfo_container{
     border-bottom: solid black 1px;
-    height:30%;
+    height:50%;
+    padding: 10px;
 }
 .button_area{
     text-align: center;
@@ -196,6 +198,6 @@
 }
 
 .button_area:hover {
-    background-color: lightsalmon;
+    background-color: #f48c54;
     cursor: pointer;
 }

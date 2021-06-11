@@ -1,7 +1,32 @@
 
 .review_container {
+    padding: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 500px;
+    height: 400px;
+
+}
+.review_title{
+    padding-top: 20px;
+
+}
+
+.review_title h1{
+    font-size: 24px;
+}
+
+.review_textarea{
+    padding-top: 100px;
+}
+.review_textarea p {
+    margin-top: 10px;
+}
+
+.review_textarea textarea {
+    margin-top: 30px;
+    width: 100%;
+}
+.review_button{
+    padding-top: 20px;
 }
