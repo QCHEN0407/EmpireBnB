@@ -36,7 +36,7 @@ const PostReviewModal = ({ listing_id }) => {
         <>
             {showReview && (
                 <Modal onClose={() => handleReviewModal()}>
-                    <form onSubmit={submitReview}>
+                    <form className="review_form" onSubmit={submitReview}>
                         <div className="review_container">
                             <div className="review_title">
                                 <h1>How was your stay?</h1>

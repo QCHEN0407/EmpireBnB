@@ -1,4 +1,10 @@
-
+.review_form{
+    /* background-color: blueviolet; */
+    padding: 20px;
+    height: 500px;
+    width: 600px;
+    border-radius: 20px;
+}
 .review_container {
     padding: 50px;
     display: flex;
