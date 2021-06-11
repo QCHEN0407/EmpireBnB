@@ -67,6 +67,9 @@ function App() {
             </Route>
 
             <Route path="/search/:category">
+              <NavBarWhite />
+              <SearchPage />
+              <Footer />
             </Route>
 
             <Route path="/profile">

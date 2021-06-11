@@ -7,20 +7,31 @@ from app.models import db, User
 # Adds a demo user, you can add other users here if you want
 def seed_users():
 
-    demo = User(
-        firstName='Demo',
-        lastName='User',
-        email='demo@aa.io',
-        password='password',
-        bio='I am the guest user, welcome to EmpireBnB!',
-        avatar='https://slackx.s3.amazonaws.com/kimi.png'
-        )
+    # demo = User(
+    #     id=1,
+    #     firstName='Demo',
+    #     lastName='User',
+    #     email='demo@aa.io',
+    #     password='password',
+    #     bio='I am the guest user, welcome to EmpireBnB!',
+    #     avatar='https://slackx.s3.amazonaws.com/kimi.png'
+    #     )
 
-    db.session.add(demo)
-    db.session.commit()
+    # db.session.add(demo)
+    # db.session.commit()
 
     users = [
         {
+            "id":"1",
+            "firstName": "Demo",
+            "lastName": "User",
+            "email": 'demo@aa.io',
+            "password": 'password',
+            "bio": "I am the guest user, welcome to EmpireBnB!",
+            "avatar": "https://slackx.s3.amazonaws.com/kimi.png"
+        },
+        {
+            "id":"2",
             "firstName": "Ren",
             "lastName": "Dracula",
             "email": 'ren@minion.com',
@@ -29,6 +40,7 @@ def seed_users():
             "avatar": "https://slackx.s3.amazonaws.com/renerose.jpg"
         },
         {
+            "id":"3",
             "firstName": "Earl",
             "lastName": "Grubhub",
             "email": 'wheremy@mfood.com',
@@ -37,6 +49,7 @@ def seed_users():
             "avatar": "https://slackx.s3.amazonaws.com/earl.jpg"
         },
         {
+            "id":"4",
             "firstName": "Vivian",
             "lastName": "Cutedog",
             "email": 'cutedog@kimi.com',
@@ -46,6 +59,7 @@ def seed_users():
 
         },
         {
+            "id":"5",
             "firstName": "Nathaniel",
             "lastName": "HotPocket",
             "email": 'hotdogs@7up.com',
@@ -53,9 +67,74 @@ def seed_users():
             'bio': 'I love white shirts, and building games.',
             "avatar": "https://slackx.s3.amazonaws.com/nathaniel.jpg"
         },
+        {
+            "id":"6",
+            "firstName": "Buddy",
+            "lastName": "Banny",
+            "email": 'buddy@zoo.com',
+            "password": 'password',
+            'bio': 'I love eating',
+            "avatar": "https://empirebnb.s3.us-east-2.amazonaws.com/UserSeeding/Buddy.png"
+        },
+        {
+            "id":"7",
+            "firstName": "Chole",
+            "lastName": "Cat",
+            "email": 'chole@zoo.com',
+            "password": 'password',
+            'bio': 'I love chasing mouse',
+            "avatar": "https://empirebnb.s3.us-east-2.amazonaws.com/UserSeeding/Chole.jpeg"
+        },
+        {
+            "id":"8",
+            "firstName": "Daisy",
+            "lastName": "Feng",
+            "email": 'daisy@zoo.com',
+            "password": 'password',
+            'bio': 'I love Kimi',
+            "avatar": "https://empirebnb.s3.us-east-2.amazonaws.com/UserSeeding/daisy.png"
+        },
+        {
+            "id":"9",
+            "firstName": "Gidget",
+            "lastName": "Dog",
+            "email": 'Gidget@7up.com',
+            "password": 'password',
+            'bio': 'I am pretty',
+            "avatar": "https://empirebnb.s3.us-east-2.amazonaws.com/UserSeeding/Gidget.png"
+        },
+        {
+            "id":"10",
+            "firstName": "Norman",
+            "lastName": "Mole",
+            "email": 'norman@mole.com',
+            "password": 'password',
+            'bio': 'I am Yanshu',
+            "avatar": "https://empirebnb.s3.us-east-2.amazonaws.com/UserSeeding/Norman.jpeg"
+        },
+        {
+            "id":"11",
+            "firstName": "Snowball",
+            "lastName": "Rabbit",
+            "email": 'snowball@rabbit.com',
+            "password": 'password',
+            'bio': 'I love carrots',
+            "avatar": "https://empirebnb.s3.us-east-2.amazonaws.com/UserSeeding/snowball.png"
+        },
+        {
+            "id":"12",
+            "firstName": "Max",
+            "lastName": "Ma",
+            "email": 'max@maa.com',
+            "password": 'password',
+            'bio': 'I like Kimi, we are best friends',
+            "avatar": "https://empirebnb.s3.us-east-2.amazonaws.com/UserSeeding/Max.png"
+        },
+        
     ]
     for user in users:
         new_user = User(
+            id=user['id'],
             firstName=user['firstName'],
             lastName=user['lastName'],
             email=user['email'],
