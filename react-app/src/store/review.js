@@ -23,6 +23,26 @@ export const getReviews = (listingId) => async(dispatch) => {
     }
 }
 
+export const addSingleReview = (user_id, listing_id, review) => async(dispatch) => {
+    const res = await fetch(`/api/reviews/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ user_id, listing_id, review })
+    })
+    try {
+        if (!res.ok) throw res
+        const review = await res.json();
+        if (review.errors) {
+            return;
+        }
+        return review;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 const initialState = {};
 
 const reviews = (state=initialState, action) => {
