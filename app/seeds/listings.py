@@ -109,7 +109,7 @@ def seed_listings():
             "price": "250",
             "num_guests": "5",
             "num_beds":"3",
-            "num_baths":"1.5",
+            "num_baths":"2",
             "city":"Queens",
             "state":"New York",
             "latitude":"40.7081",
