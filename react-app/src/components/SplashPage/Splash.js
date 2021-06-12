@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import EntireHomes from "../../images/homepage/entireHome.jpeg";
@@ -24,6 +24,7 @@ const SplashPage = () => {
   const listings = useSelector(state => state.listings.listings);
   const { setShowMenu } = useConsumeContext();
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     setShowMenu(false);
@@ -34,6 +35,10 @@ const SplashPage = () => {
   const image2 = listings?.[1].images[0].url;
   const image3 = listings?.[2].images[0].url;
   const image4 = listings?.[3].images[0].url;
+
+  const toGetAway = () => {
+    history.push("/search/Getaway");
+  }
 
   return (
     <>
@@ -100,25 +105,25 @@ const SplashPage = () => {
       <h1 className="tile__title">Live Anywhere</h1>
       <div className='tile__container'>
         <div id="live_anywhere"></div>
-        <NavLink to={`/search`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/EntireHome`} style={{ textDecoration: "none", color: "inherit" }}>
           <Tile
             src={EntireHomes}
             title="Entire homes"
             />
         </NavLink>
-        <NavLink to={`/search/unique_stays`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/CityView`} style={{ textDecoration: "none", color: "inherit" }}>
           <Tile
             src={UniqueStays}
             title="CityView Stays"
             />
         </NavLink>
-        <NavLink to={`/search/outdoor_getaways`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/Getaway`} style={{ textDecoration: "none", color: "inherit" }}>
           <Tile
             src={Outdoor}
             title="Outdoor getaways"
             />
         </NavLink>
-        <NavLink to={`/search`} style={{ textDecoration: "none", color: "inherit" }}>
+        <NavLink to={`/search/PetAllowed`} style={{ textDecoration: "none", color: "inherit" }}>
           <Tile
             src={PetsAllowed}
             title="Pets allowed"
@@ -130,7 +135,7 @@ const SplashPage = () => {
         <div className="outdoorBanner_text">
           <h1>The<br/>Greatest Outdoors</h1>
           <p>Wishlists curated by Empirebnb.</p>
-          <button>Get inspired</button>
+          <button onClick={toGetAway}>Get inspired</button>
         </div>
 
       </div>

@@ -42,7 +42,7 @@ useEffect(() => {
 }, []);
 
 const handleClick = () => {
-  history.push("/search");
+  history.push("/search/all");
 }
 
 return (

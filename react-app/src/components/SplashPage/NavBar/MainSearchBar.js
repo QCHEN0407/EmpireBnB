@@ -12,13 +12,13 @@ function MainSearchBar({dark}) {
     const [endDate, setEndDate] = useState();
     const [num_guests, setNumGuests] = useState(1);
     const [focus, setFocus] = useState(START_DATE);
-    
+
     const handleFocusChange = newFocus => {
         setFocus(newFocus || START_DATE);
     };
 
     const handleClick = () => {
-        history.push("/search");
+        history.push("/search/all");
     }
 
     const resetValues = () => {
@@ -29,7 +29,7 @@ function MainSearchBar({dark}) {
 
     return (
         <div className={`navbar__search__main ${dark}`} >
-            
+
                     <DateRangePicker
                         startDate={startDate}
                         endDate={endDate}
@@ -60,7 +60,7 @@ function MainSearchBar({dark}) {
                             </div>
                         )}
                     </DateRangePicker>
-                
+
                 {/* <input className="navbar__search__input" placeholder="check-in date"/>
                 <input className="navbar__search__input" placeholder="check-out date"/> */}
                 <input className="navbar__search__input" placeholder="number of guests"/>

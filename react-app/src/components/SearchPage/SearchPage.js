@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { NavLink } from "react-router-dom"; 
+import { NavLink, useParams } from "react-router-dom";
 import "./SearchPage.css";
 import GoogleMapAPI from "./GoogleMapAPI";
 import { getListings } from "../../store/listing";
 import SearchListingCard from "./SearchListingCard";
 
 function SearchPage() {
-
+    const {category} = useParams();
     const listings = useSelector(state => state.listings);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getListings());
+        // console.log(category);
     }, [dispatch]);
 
     return (
@@ -30,7 +31,8 @@ function SearchPage() {
                     <button><p>Price</p></button>
                     <button><p>More filters</p></button>
                 </div>
-                { listings?.listings?.length !== 0 ? listings?.listings?.map(listing => (
+                { listings?.listings?.length !== 0 ? listings?.listings?.filter(listing => listing.type === category || category === "all").map(listing => (
+
                     <NavLink to={`/listings/${listing?.id}`} style={{ textDecoration: "none" }} key={listing?.id}>
                         <SearchListingCard listing={listing} />
                     </NavLink>
