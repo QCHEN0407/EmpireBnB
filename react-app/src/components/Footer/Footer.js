@@ -7,7 +7,7 @@ import "./Footer.css";
 const Footer = () => {
     return (
         <div className="footer__container">
-            <div>© 2021 EmpireBnB. No rights reserved.</div>
+            <div>© 2021 EmpireBnB</div>
             <div className="footer__links">
                 <LanguageIcon id="language"/>
                 <p>English (US)</p>
