@@ -42,6 +42,25 @@ Before you begin, please check the following Wiki documents:
 
 #### Highlights 
 
+The way to render the upcoming trips and past trips. For past trips, I offer a review function, and for upcoming trips, I offer a cancel option.
+```
+{past_trips?.bookings.length > 0 ? <h2>Past trips</h2> : <h2>No past trips</h2>}
+   <div className="trip_container">
+      {past_trips?.bookings.map(booking =>
+          <div className="trip_card">
+              <img src={booking.listing.images[0].url} alt="Avatar"></img>
+              <div className="tripInfo_container">
+                  <h4><b>{`${parseDateString(booking.check_in)} - ${parseDateString(booking.check_out)}`}</b></h4>
+                  <h3>{`${booking.listing.city}, NY`}</h3>
+                  <p>{`$${booking.total_cost}`}</p>
+              </div>
+              <div className="button_area" onClick={()=>{handleReviewClick(booking.listing.id)}}>
+                  <h4>Add Review</h4>
+              </div>
+          </div>
+    </div>
+)}
+```
 
 
 #### Challenges
