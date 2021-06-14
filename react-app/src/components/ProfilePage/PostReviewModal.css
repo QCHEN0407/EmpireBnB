@@ -23,7 +23,7 @@
 }
 
 .review_textarea{
-    padding-top: 120px;
+    padding-top: 50px;
 }
 .review_textarea h2{
     font-size: 20px;
@@ -33,7 +33,7 @@
 }
 
 .review_textarea textarea {
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
 }
 .review_button {
@@ -57,6 +57,7 @@
 
 .review-rating > label{
     color: #ebebeb;
+    padding-top: 20px;
 }
 
 input[type="radio"]{
