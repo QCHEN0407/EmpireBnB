@@ -20,6 +20,10 @@ _Empirebnb_, a pixel perfect [Airbnb](https://www.airbnb.com/) clone, is a multi
 ![Confirm payment and Profile View](react-app/public/Confirm&Pay.png)
 ![Confirm payment and Profile View](react-app/public/ProfilePage.png)
 
+### Add review and rating View
+![Confirm payment and Profile View](react-app/public/Review-Modal.png)
+
+
 ## Prerequisites
 
 Before you begin, please check the following Wiki documents:
