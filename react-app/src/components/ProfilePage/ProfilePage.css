@@ -170,14 +170,13 @@
   flex-direction: column;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  height:270px;
+  height:280px;
   width:330px;
   border-radius: 20px; /* 5px rounded corners */
   margin-right:32px;
   margin-bottom: 32px;
 }
 
-/* Add rounded corners to the top left and the top right corner of the image */
 .trip_card img {
   border-radius: 20px 20px 0 0;
   height: 150px;
@@ -189,6 +188,8 @@
     border-bottom: solid black 1px;
     height:50%;
     padding: 10px;
+    line-height: 1.3;
+
 }
 .button_area{
     text-align: center;
