@@ -20,8 +20,6 @@
 
 .search-icon-main {
     display: flex;
-    margin-top: 2.5px;
-    padding: 3px 5px;
     font-size: 22px;
     justify-content: center;
     background-color: #E37F0E;
@@ -34,7 +32,7 @@
 
 .navbar__search__input {
     display: flex;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     align-items: center;
     text-align: center;
     height: 50px;
@@ -90,6 +88,5 @@
   position: absolute;
   /* background-color: lightpink; */
   /* background-image: url("https://empirebnb.s3.us-east-2.amazonaws.com/ny__images/420201.jpg"); */
-  
-}
 
+}
