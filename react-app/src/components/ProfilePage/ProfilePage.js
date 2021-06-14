@@ -86,7 +86,7 @@ function ProfilePage({}) {
             <div className="booking__info-container">
                 <div className="user__profile-info-container">
                     <h1>Hi, I'm {sessionUser?.firstName}</h1>
-                    <div className="profile__edit-container"><span>Edit Profile</span></div>
+                    {/* <div className="profile__edit-container"><span>Edit Profile</span></div> */}
                     <h3>About</h3>
                     <p>{sessionUser?.bio}</p>
                     <div>

@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="footer__links">
                 <LanguageIcon id="language"/>
                 <p>English (US)</p>
-                <a href="https://github.com/QCHEN0407" style={{ textDecoration: "none" }}><p className="about__link">About the Developer</p></a>
+                <a href="https://qchen0407.github.io/" style={{ textDecoration: "none" }}><p className="about__link">About the Developer</p></a>
                 <a href="https://github.com/QCHEN0407/EmpireBnB">
                     <FaGithub id="github"/>
                 </a>

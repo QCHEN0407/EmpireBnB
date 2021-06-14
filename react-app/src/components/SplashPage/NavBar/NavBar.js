@@ -67,7 +67,9 @@ return (
     </div>
     <div className={`navbar__buttons ${dark}`}>
       <div className={`become-a-host ${dark}`}><p>Become a host</p></div>
-      <LanguageIcon className={`language-icon ${dark}`} />
+      <a href="https://qchen0407.github.io/">
+        <LanguageIcon className={`language-icon ${dark}`} />
+      </a>
       <div id={`menu-avatar`} className={`${dark}`} onClick={openMenu}>
         <MenuIcon id="menu-icon" />
         {sessionUser ? <img id="avatar" src={sessionUser.avatar} alt="" /> : <AvatarIcon id="avatar" />}
