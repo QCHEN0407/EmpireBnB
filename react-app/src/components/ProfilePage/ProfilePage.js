@@ -106,6 +106,7 @@ function ProfilePage({}) {
                                     <img src={booking.listing.images[0].url} alt="Avatar"></img>
                                     <div className="tripInfo_container">
                                         <h4><b>{`${parseDateString(booking.check_in)} - ${parseDateString(booking.check_out)}`}</b></h4>
+                                        <h3>{`${booking.listing.city}, NY`}</h3>
                                         <p>{`$${booking.total_cost}`}</p>
                                     </div>
                                     <div className="button_area" onClick={()=>cancelTrip(booking.id)}>
@@ -121,6 +122,7 @@ function ProfilePage({}) {
                                     <img src={booking.listing.images[0].url} alt="Avatar"></img>
                                     <div className="tripInfo_container">
                                         <h4><b>{`${parseDateString(booking.check_in)} - ${parseDateString(booking.check_out)}`}</b></h4>
+                                        <h3>{`${booking.listing.city}, NY`}</h3>
                                         <p>{`$${booking.total_cost}`}</p>
                                     </div>
                                     <div className="button_area" onClick={()=>{handleReviewClick(booking.listing.id)}}>
