@@ -131,7 +131,7 @@ def to_dict(self):
 
 #### Challenges
 * Integrating with Google Map API was challenging. They have good support for React but I still need to learn the syntax about how to initialize a map and put markers on them.
-* Seeding data is a challenge as well. I needed to find open source data for airbnb listings and parse them into my data model.
+* Seeding data was a challenge as well. I needed to find open source data for airbnb listings and parse them into my data model.
 * Implementing the booking mechanism needs to interact with different types of data stores and do CRUD operations to the backend.
 
 ## Future Implementations 
