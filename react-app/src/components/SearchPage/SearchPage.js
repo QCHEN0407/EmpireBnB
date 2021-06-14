@@ -21,7 +21,7 @@ function SearchPage() {
             <div className="search_listing-container">
                 <div className="search__listings-info">
                     <p>
-                        <span>{listings?.listings?.length}+ stays</span>
+                        <span>{listings?.listings?.filter(listing => listing.type === category || category === "all").length}+ stays</span>
                         {/* <span>・MMMM dd to MMMM dd</span>
                         <span>・Num guests</span> */}
                     </p>
@@ -43,7 +43,7 @@ function SearchPage() {
                 }
             </div>
             <div className="google__maps-container">
-                <GoogleMapAPI listings={listings.listings}/>
+                <GoogleMapAPI listings={listings?.listings?.filter(listing => listing.type === category || category === "all")}/>
             </div>
         </div>
     )
