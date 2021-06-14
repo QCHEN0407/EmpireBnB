@@ -65,8 +65,8 @@ function MainSearchBar({dark}) {
 
                 {/* <input className="navbar__search__input" placeholder="check-in date"/>
                 <input className="navbar__search__input" placeholder="check-out date"/> */}
-                <input className="navbar__search__input" placeholder="number of guests" onFocus={(e) => e.target.placeholder = ""} 
-                onBlur={(e) => e.target.placeholder = "number of guests"}/>
+                <input className="navbar__search__input" placeholder="Number of guests" onFocus={(e) => e.target.placeholder = ""} 
+                onBlur={(e) => e.target.placeholder = "Number of guests"}/>
                 <div className="search-icon-main navbar__search__input" onClick={handleClick}>
                     <SearchIcon />
                     <h4>Search</h4>
