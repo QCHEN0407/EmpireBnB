@@ -42,8 +42,9 @@ Before you begin, please check the following Wiki documents:
 
 #### Highlights 
 
-The way to render the upcoming trips and past trips. For past trips, I offer a review function, and for upcoming trips, I offer a cancel option.
-```
+* The way to render the upcoming trips and past trips. For past trips, I offer a review function, and for upcoming trips, I offer a cancel option.
+
+```javascript
 {past_trips?.bookings.length > 0 ? <h2>Past trips</h2> : <h2>No past trips</h2>}
    <div className="trip_container">
       {past_trips?.bookings.map(booking =>
@@ -61,7 +62,72 @@ The way to render the upcoming trips and past trips. For past trips, I offer a r
     </div>
 )}
 ```
+* In the review past trips function. I enabled a rating function to apply stars.
 
+```javascript
+const radioButtons = () => {
+  return [5, 4, 3, 2, 1].map(i => (
+    <>
+    <input type="radio" key={`radio-${i}`} id={`radio-${i}`} value={i} checked={i === rating}
+      onClick={() => setRatingFunc(i)} />
+    <label htmlFor={`radio-${i}`} key={`label-${i}`}><i className="fas fa-star fa-2x fa-color"></i></label>
+    </>
+    )
+  )
+}
+```
+
+```css
+.review-rating > label{
+    color: #ebebeb;
+    padding-top: 20px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+input[type="radio"]:checked ~ label {
+    color:gold
+}
+
+input[type="radio"]:hover ~ label {
+    color: gold;
+}
+
+.review-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+```
+
+* In back end responses which need to return details of the listing info, I included the images and reviews info alongside other listing information to the response, which helped the redux store load data for all in one time
+
+```python
+def to_dict(self):
+     return {
+         "id": self.id,
+         "title": self.title,
+         "description": self.description,
+         "type": self.type,
+         "host_id": self.host_id,
+         "price": self.price,
+         "num_guests": self.num_guests,
+         "num_beds": self.num_beds,
+         "num_baths": self.num_baths,
+         "city": self.city,
+         "state": self.state,
+         "latitude": self.latitude,
+         "longitude": self.longitude,
+         "rating": str(self.rating),
+         "created_at": self.created_at,
+         "updated_at": self.updated_at,
+         "images": [image.to_dict() for image in self.images],
+         "host": self.user.to_dict_simple(),
+         "reviews": [review.to_dict() for review in self.reviews]
+ }
+```
 
 #### Challenges
 * 
