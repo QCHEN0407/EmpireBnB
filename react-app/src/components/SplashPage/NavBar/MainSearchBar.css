@@ -40,7 +40,13 @@
     border: none;
     border-radius: 999px;
     cursor: pointer;
+
 }
+.navbar__search__input:focus{
+    outline: none;
+    box-shadow: none;
+}
+
 
 .navbar__search__input:hover {
     background-color: #E37F0E;
@@ -73,6 +79,11 @@
     border: none;
     border-radius: 999px;
     cursor: pointer;
+}
+
+.navbar__search__input__nice_date:focus{
+    outline: none;
+    box-shadow: none;
 }
 
 .navbar__search__input__nice_date:hover {

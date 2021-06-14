@@ -49,6 +49,7 @@ function MainSearchBar({dark}) {
                                     {...startDateInputProps}
                                     placeholder='Check in'
                                     required
+                                    readonly="readonly"
                                 />
                                 <span className='date-range_arrow' />
                                 <input
@@ -56,6 +57,7 @@ function MainSearchBar({dark}) {
                                     {...endDateInputProps}
                                     placeholder='Check out'
                                     required
+                                    readonly="readonly"
                                 />
                             </div>
                         )}
@@ -63,7 +65,7 @@ function MainSearchBar({dark}) {
 
                 {/* <input className="navbar__search__input" placeholder="check-in date"/>
                 <input className="navbar__search__input" placeholder="check-out date"/> */}
-                <input className="navbar__search__input" placeholder="number of guests"/>
+                <input className="navbar__search__input" placeholder="number of guests"  readonly="readonly"/>
                 <div className="search-icon-main navbar__search__input" onClick={handleClick}>
                     <SearchIcon />
                     <h4>Search</h4>
