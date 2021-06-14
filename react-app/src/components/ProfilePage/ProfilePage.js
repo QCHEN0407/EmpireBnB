@@ -114,7 +114,7 @@ function ProfilePage({}) {
                                 </div>
                             )}
                         </div>
-                    {past_trips?.bookings.length > 0 ? <h2>Past trips</h2> : <h2>No upcoming trips</h2>}
+                    {past_trips?.bookings.length > 0 ? <h2>Past trips</h2> : <h2>No past trips</h2>}
                         <div className="trip_container">
                             {past_trips?.bookings.map(booking =>
                                 <div className="trip_card">
