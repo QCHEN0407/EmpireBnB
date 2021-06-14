@@ -1,5 +1,4 @@
 
-
 .error__validation {
     padding-left: 10px;
     font-style: italic;
@@ -11,8 +10,7 @@
     box-sizing: border-box;
     padding: 50px;
     height: fit-content;
-    /* background-image: url("https://empirebnb.s3.us-east-2.amazonaws.com/ny__images/420201.jpg"); */
-    /* align-items: center; */
+
 }
 
 .login__header h1{
@@ -50,7 +48,7 @@ input::placeholder {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     width: 100%;
-    /* margin-top: 20px; */
+
 }
 
 .login__button button:hover {
@@ -64,10 +62,6 @@ input::placeholder {
     font-weight: bold;
     padding: 20px 0px 0px 0px;
 }
-
-/* .goto__signup:hover {
-    text-decoration: underline;
-} */
 
 .goto__signup {
     font-size: 14px;
