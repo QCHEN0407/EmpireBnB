@@ -5,10 +5,20 @@
 _Empirebnb_, a pixel perfect [Airbnb](https://www.airbnb.com/) clone, is a multi-page application that allows users to find and rent homes. Users can view browse, create, cancel and review bookings on their profile page.
 
 ### Home and About View
-![Home and Search View](react-app/public/home_about.gif)
+![Home and Search View](react-app/public/splash.png)
+![Home and Search View]( react-app/public/HomePage.png)
 
-### Booking and Profile View
-![Channels View](react-app/public/channels.gif)
+
+### Searching and Booking Page View
+![Searching and Booking Page View](react-app/public/searchpage.png)
+![Searching and Booking Page View](react-app/public/BookingPage.png)
+
+### SignUp and Login View
+![Signup and Login View](react-app/public/SignUp-Login.png)
+
+### Confirm Payment and Profile View
+![Confirm payment and Profile View](react-app/public/Confirm&Pay.png)
+![Confirm payment and Profile View](react-app/public/ProfilePage.png)
 
 ## Prerequisites
 
