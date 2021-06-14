@@ -6,7 +6,7 @@
     border-radius: 20px;
 }
 .review_container {
-    padding: 50px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -23,7 +23,7 @@
 }
 
 .review_textarea{
-    padding-top: 50px;
+    padding-top: 40px;
 }
 .review_textarea h2{
     font-size: 20px;
@@ -73,8 +73,12 @@ input[type="radio"]:hover ~ label {
 }
 
 .review-rating {
-    margin-top: 5px;
+
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
+}
+
+.rating-text{
+    padding-top: 20px;
 }
