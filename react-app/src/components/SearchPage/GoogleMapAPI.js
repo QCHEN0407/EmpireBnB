@@ -22,7 +22,7 @@ const center = { // New York City
     lng: -74.00597,
 };
 
-const GoogleMapAPI = ({ listings }) =>  {
+const GoogleMapAPI = ({ listings, zoomValue }) =>  {
     const { isLoaded, loadError } = useLoadScript({
         googleMapsApiKey: 'AIzaSyCs8UCbtHYbl_NDL842oH0jEiV_k3ATOCo',
         libraries
@@ -47,7 +47,7 @@ const GoogleMapAPI = ({ listings }) =>  {
             <GoogleMap
                 id="map"
                 mapContainerStyle={mapContainerStyle}
-                zoom={12}
+                zoom={zoomValue}
                 center={center}
                 options={options}
                 onLoad={onMapLoad}

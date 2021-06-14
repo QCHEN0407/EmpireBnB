@@ -43,7 +43,7 @@ function SearchPage() {
                 }
             </div>
             <div className="google__maps-container">
-                <GoogleMapAPI listings={listings?.listings?.filter(listing => listing.type === category || category === "all")}/>
+                <GoogleMapAPI listings={listings?.listings?.filter(listing => listing.type === category || category === "all")} zoomValue={category==="Getaway"?8:12}/>
             </div>
         </div>
     )
