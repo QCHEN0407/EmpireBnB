@@ -21,8 +21,9 @@ const LoginForm = () => {
     const data = await dispatch(login(email, password));
     if (data.errors) {
       setErrors(data.errors);
+    } else {
+      setShowMenu();
     }
-    setShowMenu();
   };
 
   const loginDemoUser = async (e) => {
