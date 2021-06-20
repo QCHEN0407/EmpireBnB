@@ -2,7 +2,7 @@
 
 ### **Live Link: [Empirebnb](https://empirebnb.herokuapp.com/)**
 
-_Empirebnb_, a pixel perfect [Airbnb](https://www.airbnb.com/) clone, is a multi-page application that allows users to find and rent homes. Users can view browse, create, cancel and review bookings on their profile page.
+_Empirebnb_, a pixel perfect [Airbnb](https://www.airbnb.com/) clone, is a single page application that allows users to find and rent homes. Users can view browse, create, cancel and review bookings on their profile page.
 
 ### Home and About View
 ![Home and Search View](react-app/public/splash.png)
