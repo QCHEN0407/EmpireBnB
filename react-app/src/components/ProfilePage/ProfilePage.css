@@ -149,6 +149,9 @@
     font-weight: 600;
 }
 
+.booking__info-container {
+    width: 900px;
+}
 
 /* MODAL STYLING HERE */
 .profile__edit-container {
