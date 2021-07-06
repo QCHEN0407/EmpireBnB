@@ -31,7 +31,11 @@ def load_user(id):
 # Tell flask about our seed commands
 app.cli.add_command(seed_commands)
 
+# let flask use envionment virables
 app.config.from_object(Config)
+
+
+#indicating certain url is handled by witch python file
 app.register_blueprint(user_routes, url_prefix='/api/users')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(listing_routes, url_prefix='/api/listings')
