@@ -24,6 +24,7 @@ class User(db.Model, UserMixin):
   #   back_populates="users"
   #   )
 
+# password fcuntion is a property of Class User
   @property
   def password(self):
     return self.hashed_password
@@ -37,7 +38,7 @@ class User(db.Model, UserMixin):
   def check_password(self, password):
     return check_password_hash(self.password, password)
 
-
+# A customized function to return certain information of a user object
   def to_dict(self):
     return {
       "id": self.id,
