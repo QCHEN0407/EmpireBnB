@@ -84,7 +84,7 @@ export const cancelBooking = (userId, bookingId) => async (dispatch) => {
     });
     try {
         if (!res.ok) throw res
-        const bookingId = await res.json();
+        // const bookingId = await res.json();
         // dispatch(deleteBooking(bookingId))
         dispatch(getUpComingTripsByUserId(userId));
 
