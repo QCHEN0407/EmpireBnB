@@ -92,7 +92,7 @@ export const cancelBooking = (userId, bookingId) => async (dispatch) => {
         console.log(error)
     }
 }
-
+//action creator: fetch result from database
 export const getUpComingTripsByUserId = (userId) => async (dispatch) => {
     const res = await fetch(`/api/bookings/${userId}/upcoming`)
     try {

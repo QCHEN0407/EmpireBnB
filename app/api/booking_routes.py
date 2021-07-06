@@ -6,9 +6,10 @@ booking_routes = Blueprint('bookings', __name__)
 
 @booking_routes.route('/', methods=['POST'])
 def create_booking():
+    # grab new booking json from React booking.js Thunk Action Creators
     request_json = request.get_json()["booking"]
     new_booking = Booking(
-        user_id = request_json["user_id"], 
+        user_id = request_json["user_id"],
         listing_id = request_json["listing_id"],
         num_guests = request_json["num_guests"],
         total_cost = request_json["total_cost"],
@@ -23,7 +24,7 @@ def create_booking():
 def get_bookings_by_user_upcoming(user_id):
     now = datetime.now()
     bookings = Booking.query.filter(Booking.user_id == user_id, Booking.check_in > now)
-    
+
     return {"bookings": [booking.to_dict() for booking in bookings]}
 
 
@@ -31,7 +32,7 @@ def get_bookings_by_user_upcoming(user_id):
 def get_bookings_by_user_past(user_id):
     now = datetime.now()
     bookings = Booking.query.filter(Booking.user_id == user_id, Booking.check_in < now)
-    
+
     return {"bookings": [booking.to_dict() for booking in bookings]}
 
 @booking_routes.route('/<int:booking_id>', methods=['DELETE'])

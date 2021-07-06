@@ -101,6 +101,7 @@ function ProfilePage({}) {
                 <div className="all__bookings-container">
                     {upcoming_trips?.bookings.length > 0 ? <h2>Upcoming trips</h2> : <h2>No upcoming trips</h2>}
                     <div className="trip_container">
+                        {/* react optional chaining  */}
                             {upcoming_trips?.bookings.map(booking =>
                                 <div className="trip_card">
                                     <img src={booking.listing.images[0].url} alt="Avatar"></img>
