@@ -28,7 +28,7 @@ class Listing(db.Model):
     bookings = db.relationship("Booking", back_populates="listing")
     reviews = db.relationship("Review", back_populates="listing")
 
-
+#self: the class instance attribute
     def to_dict(self):
         return {
             "id": self.id,

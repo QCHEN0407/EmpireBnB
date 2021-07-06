@@ -46,6 +46,7 @@ class User(db.Model, UserMixin):
       "lastName": self.lastName,
       "email": self.email,
       "avatar": self.avatar,
+      #comprehension
       "listings":  {listing.id: listing.to_dict() for listing in self.listings}
     }
 
